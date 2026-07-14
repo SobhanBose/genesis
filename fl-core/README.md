@@ -1,4 +1,5 @@
 # ClinVar Federated Learning System
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 This repository implements a federated learning workflow for pathogenicity prediction on ClinVar-style sequence data. The current pipeline is centered on a Flower-based federated server and client setup, uses FedProx as the default server strategy, and evaluates the global model on a centralized validation set after each round.
 
