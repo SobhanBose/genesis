@@ -1,0 +1,188 @@
+2025-07-05 19:17:17,242 - INFO - Loaded validation data: 13383 samples
+2025-07-05 19:17:17,251 - INFO - Preprocessing components initialized
+2025-07-05 19:17:17,267 - INFO - Initialized model with input size: 173
+2025-07-05 19:17:17,268 - INFO - Federated server initialized successfully
+2025-07-05 19:17:17,268 - INFO - Starting federated server on port 8080
+2025-07-05 19:17:17,268 - INFO - Using FedProx strategy with proximal_mu=0.01
+2025-07-05 19:17:30,081 - INFO - Global model evaluation - Loss: 0.6430, Accuracy: 0.6936
+2025-07-05 19:17:30,083 - INFO - Centralized evaluation (Round 0): Loss=0.6430, Accuracy=0.6936
+2025-07-05 19:17:30,084 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:17:30,084 - INFO - Round 1: Learning rate = 0.000100
+2025-07-05 19:17:36,333 - INFO - Round 1: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:17:36,334 - INFO - Round 1: Sampled clients: ['bcfaa9f38ec4419da6c07f5f267caf23', '7e2f71a1e55e431ca3a33f623c8e3530', '61b64eb4d2e640dc9ebb3eac1f6e2c73', '147179d9f6894e2ebbc29c4b0d56aba7', 'b865eced8aac4d85a851c63617031fdc']
+2025-07-05 19:18:13,965 - INFO - Global model evaluation - Loss: 0.5776, Accuracy: 0.6827
+2025-07-05 19:18:13,965 - INFO - Centralized evaluation (Round 1): Loss=0.5776, Accuracy=0.6827
+2025-07-05 19:18:13,966 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:18:13,966 - INFO - Round 2: Learning rate = 0.000100
+2025-07-05 19:18:13,967 - INFO - Round 2: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:18:13,967 - INFO - Round 2: Sampled clients: ['abb7779e1e9e44729241a9a98ce4f506', '395d9f4c362642b382c635ef4e9f1073', 'bcfaa9f38ec4419da6c07f5f267caf23', '147179d9f6894e2ebbc29c4b0d56aba7', 'b865eced8aac4d85a851c63617031fdc']
+2025-07-05 19:18:47,365 - INFO - Global model evaluation - Loss: 0.5583, Accuracy: 0.7132
+2025-07-05 19:18:47,367 - INFO - Centralized evaluation (Round 2): Loss=0.5583, Accuracy=0.7132
+2025-07-05 19:18:47,367 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:18:47,368 - INFO - Round 3: Learning rate = 0.000100
+2025-07-05 19:18:47,368 - INFO - Round 3: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:18:47,368 - INFO - Round 3: Sampled clients: ['abb7779e1e9e44729241a9a98ce4f506', '395d9f4c362642b382c635ef4e9f1073', 'bcfaa9f38ec4419da6c07f5f267caf23', '61b64eb4d2e640dc9ebb3eac1f6e2c73', '21f9407410b741a99a4a627a5cc675d6']
+2025-07-05 19:19:16,514 - INFO - Global model evaluation - Loss: 0.5231, Accuracy: 0.7492
+2025-07-05 19:19:16,514 - INFO - Centralized evaluation (Round 3): Loss=0.5231, Accuracy=0.7492
+2025-07-05 19:19:16,515 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:19:16,515 - INFO - Round 4: Learning rate = 0.000100
+2025-07-05 19:19:16,515 - INFO - Round 4: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:19:16,515 - INFO - Round 4: Sampled clients: ['61b64eb4d2e640dc9ebb3eac1f6e2c73', 'bcfaa9f38ec4419da6c07f5f267caf23', '395d9f4c362642b382c635ef4e9f1073', '7e2f71a1e55e431ca3a33f623c8e3530', 'e8d0ed87e1be4e80a9cf149a628fd842']
+2025-07-05 19:19:51,616 - INFO - Global model evaluation - Loss: 0.3887, Accuracy: 0.8337
+2025-07-05 19:19:51,618 - INFO - Centralized evaluation (Round 4): Loss=0.3887, Accuracy=0.8337
+2025-07-05 19:19:51,618 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:19:51,618 - INFO - Round 5: Learning rate = 0.000100
+2025-07-05 19:19:51,619 - INFO - Round 5: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:19:51,619 - INFO - Round 5: Sampled clients: ['7e2f71a1e55e431ca3a33f623c8e3530', 'abb7779e1e9e44729241a9a98ce4f506', 'bcfaa9f38ec4419da6c07f5f267caf23', 'e8d0ed87e1be4e80a9cf149a628fd842', '61b64eb4d2e640dc9ebb3eac1f6e2c73']
+2025-07-05 19:20:25,236 - INFO - Global model evaluation - Loss: 0.3225, Accuracy: 0.8719
+2025-07-05 19:20:25,237 - INFO - Centralized evaluation (Round 5): Loss=0.3225, Accuracy=0.8719
+2025-07-05 19:20:25,238 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:20:25,238 - INFO - Round 6: Learning rate = 0.000100
+2025-07-05 19:20:25,238 - INFO - Round 6: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:20:25,239 - INFO - Round 6: Sampled clients: ['bcfaa9f38ec4419da6c07f5f267caf23', 'b865eced8aac4d85a851c63617031fdc', '5e0e51c3ecb449a0996ef8f28303dca7', '7e2f71a1e55e431ca3a33f623c8e3530', '147179d9f6894e2ebbc29c4b0d56aba7']
+2025-07-05 19:21:08,001 - INFO - Global model evaluation - Loss: 0.5491, Accuracy: 0.7251
+2025-07-05 19:21:08,004 - INFO - Centralized evaluation (Round 6): Loss=0.5491, Accuracy=0.7251
+2025-07-05 19:21:08,005 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:21:08,005 - INFO - Round 7: Learning rate = 0.000100
+2025-07-05 19:21:08,005 - INFO - Round 7: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:21:08,005 - INFO - Round 7: Sampled clients: ['7e2f71a1e55e431ca3a33f623c8e3530', '61b64eb4d2e640dc9ebb3eac1f6e2c73', '395d9f4c362642b382c635ef4e9f1073', 'b865eced8aac4d85a851c63617031fdc', 'bcfaa9f38ec4419da6c07f5f267caf23']
+2025-07-05 19:21:42,689 - INFO - Global model evaluation - Loss: 0.3458, Accuracy: 0.8800
+2025-07-05 19:21:42,692 - INFO - Centralized evaluation (Round 7): Loss=0.3458, Accuracy=0.8800
+2025-07-05 19:21:42,693 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:21:42,693 - INFO - Round 8: Learning rate = 0.000100
+2025-07-05 19:21:42,693 - INFO - Round 8: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:21:42,693 - INFO - Round 8: Sampled clients: ['e8d0ed87e1be4e80a9cf149a628fd842', '21f9407410b741a99a4a627a5cc675d6', '395d9f4c362642b382c635ef4e9f1073', '5e0e51c3ecb449a0996ef8f28303dca7', '147179d9f6894e2ebbc29c4b0d56aba7']
+2025-07-05 19:22:22,805 - INFO - Global model evaluation - Loss: 0.6916, Accuracy: 0.6395
+2025-07-05 19:22:22,807 - INFO - Centralized evaluation (Round 8): Loss=0.6916, Accuracy=0.6395
+2025-07-05 19:22:22,808 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:22:22,808 - INFO - Round 9: Learning rate = 0.000100
+2025-07-05 19:22:22,808 - INFO - Round 9: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:22:22,808 - INFO - Round 9: Sampled clients: ['147179d9f6894e2ebbc29c4b0d56aba7', '7e2f71a1e55e431ca3a33f623c8e3530', '21f9407410b741a99a4a627a5cc675d6', '5e0e51c3ecb449a0996ef8f28303dca7', '61b64eb4d2e640dc9ebb3eac1f6e2c73']
+2025-07-05 19:23:01,238 - INFO - Global model evaluation - Loss: 0.6892, Accuracy: 0.6540
+2025-07-05 19:23:01,239 - INFO - Centralized evaluation (Round 9): Loss=0.6892, Accuracy=0.6540
+2025-07-05 19:23:01,239 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:23:01,239 - INFO - Round 10: Learning rate = 0.000100
+2025-07-05 19:23:01,240 - INFO - Round 10: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:23:01,240 - INFO - Round 10: Sampled clients: ['abb7779e1e9e44729241a9a98ce4f506', '5e0e51c3ecb449a0996ef8f28303dca7', 'e8d0ed87e1be4e80a9cf149a628fd842', 'bcfaa9f38ec4419da6c07f5f267caf23', '147179d9f6894e2ebbc29c4b0d56aba7']
+2025-07-05 19:23:41,246 - INFO - Global model evaluation - Loss: 0.6066, Accuracy: 0.7002
+2025-07-05 19:23:41,248 - INFO - Centralized evaluation (Round 10): Loss=0.6066, Accuracy=0.7002
+2025-07-05 19:23:41,249 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:23:41,249 - INFO - Round 11: Learning rate = 0.000100
+2025-07-05 19:23:41,249 - INFO - Round 11: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:23:41,249 - INFO - Round 11: Sampled clients: ['e8d0ed87e1be4e80a9cf149a628fd842', 'b865eced8aac4d85a851c63617031fdc', '5e0e51c3ecb449a0996ef8f28303dca7', '147179d9f6894e2ebbc29c4b0d56aba7', '61b64eb4d2e640dc9ebb3eac1f6e2c73']
+2025-07-05 19:24:20,115 - INFO - Global model evaluation - Loss: 0.6353, Accuracy: 0.6904
+2025-07-05 19:24:20,115 - INFO - Centralized evaluation (Round 11): Loss=0.6353, Accuracy=0.6904
+2025-07-05 19:24:20,117 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:24:20,117 - INFO - Round 12: Learning rate = 0.000100
+2025-07-05 19:24:20,117 - INFO - Round 12: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:24:20,117 - INFO - Round 12: Sampled clients: ['e8d0ed87e1be4e80a9cf149a628fd842', '21f9407410b741a99a4a627a5cc675d6', '395d9f4c362642b382c635ef4e9f1073', '147179d9f6894e2ebbc29c4b0d56aba7', 'abb7779e1e9e44729241a9a98ce4f506']
+2025-07-05 19:24:52,736 - INFO - Global model evaluation - Loss: 0.3176, Accuracy: 0.9162
+2025-07-05 19:24:52,738 - INFO - Centralized evaluation (Round 12): Loss=0.3176, Accuracy=0.9162
+2025-07-05 19:24:52,739 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:24:52,739 - INFO - Round 13: Learning rate = 0.000100
+2025-07-05 19:24:52,739 - INFO - Round 13: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:24:52,739 - INFO - Round 13: Sampled clients: ['61b64eb4d2e640dc9ebb3eac1f6e2c73', 'bcfaa9f38ec4419da6c07f5f267caf23', '21f9407410b741a99a4a627a5cc675d6', '395d9f4c362642b382c635ef4e9f1073', 'b865eced8aac4d85a851c63617031fdc']
+2025-07-05 19:25:15,957 - INFO - Global model evaluation - Loss: 0.3495, Accuracy: 0.8931
+2025-07-05 19:25:15,960 - INFO - Centralized evaluation (Round 13): Loss=0.3495, Accuracy=0.8931
+2025-07-05 19:25:15,960 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:25:15,960 - INFO - Round 14: Learning rate = 0.000100
+2025-07-05 19:25:15,960 - INFO - Round 14: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:25:15,960 - INFO - Round 14: Sampled clients: ['e8d0ed87e1be4e80a9cf149a628fd842', '395d9f4c362642b382c635ef4e9f1073', 'b865eced8aac4d85a851c63617031fdc', '5e0e51c3ecb449a0996ef8f28303dca7', '61b64eb4d2e640dc9ebb3eac1f6e2c73']
+2025-07-05 19:25:52,225 - INFO - Global model evaluation - Loss: 0.4835, Accuracy: 0.7946
+2025-07-05 19:25:52,231 - INFO - Centralized evaluation (Round 14): Loss=0.4835, Accuracy=0.7946
+2025-07-05 19:25:52,232 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:25:52,232 - INFO - Round 15: Learning rate = 0.000100
+2025-07-05 19:25:52,232 - INFO - Round 15: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:25:52,232 - INFO - Round 15: Sampled clients: ['7e2f71a1e55e431ca3a33f623c8e3530', 'bcfaa9f38ec4419da6c07f5f267caf23', '5e0e51c3ecb449a0996ef8f28303dca7', 'b865eced8aac4d85a851c63617031fdc', 'e8d0ed87e1be4e80a9cf149a628fd842']
+2025-07-05 19:26:31,946 - INFO - Global model evaluation - Loss: 0.4426, Accuracy: 0.8278
+2025-07-05 19:26:31,946 - INFO - Centralized evaluation (Round 15): Loss=0.4426, Accuracy=0.8278
+2025-07-05 19:26:31,947 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:26:31,947 - INFO - Round 16: Learning rate = 0.000100
+2025-07-05 19:26:31,947 - INFO - Round 16: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:26:31,947 - INFO - Round 16: Sampled clients: ['61b64eb4d2e640dc9ebb3eac1f6e2c73', '147179d9f6894e2ebbc29c4b0d56aba7', '7e2f71a1e55e431ca3a33f623c8e3530', '5e0e51c3ecb449a0996ef8f28303dca7', 'bcfaa9f38ec4419da6c07f5f267caf23']
+2025-07-05 19:27:11,594 - INFO - Global model evaluation - Loss: 0.5034, Accuracy: 0.7884
+2025-07-05 19:27:11,597 - INFO - Centralized evaluation (Round 16): Loss=0.5034, Accuracy=0.7884
+2025-07-05 19:27:11,598 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:27:11,598 - INFO - Round 17: Learning rate = 0.000100
+2025-07-05 19:27:11,598 - INFO - Round 17: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:27:11,598 - INFO - Round 17: Sampled clients: ['5e0e51c3ecb449a0996ef8f28303dca7', '21f9407410b741a99a4a627a5cc675d6', '395d9f4c362642b382c635ef4e9f1073', '61b64eb4d2e640dc9ebb3eac1f6e2c73', 'bcfaa9f38ec4419da6c07f5f267caf23']
+2025-07-05 19:27:49,838 - INFO - Global model evaluation - Loss: 0.7156, Accuracy: 0.6626
+2025-07-05 19:27:49,838 - INFO - Centralized evaluation (Round 17): Loss=0.7156, Accuracy=0.6626
+2025-07-05 19:27:49,838 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:27:49,838 - INFO - Round 18: Learning rate = 0.000100
+2025-07-05 19:27:49,838 - INFO - Round 18: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:27:49,839 - INFO - Round 18: Sampled clients: ['abb7779e1e9e44729241a9a98ce4f506', 'bcfaa9f38ec4419da6c07f5f267caf23', '7e2f71a1e55e431ca3a33f623c8e3530', '5e0e51c3ecb449a0996ef8f28303dca7', '21f9407410b741a99a4a627a5cc675d6']
+2025-07-05 19:28:32,326 - INFO - Global model evaluation - Loss: 0.4828, Accuracy: 0.8118
+2025-07-05 19:28:32,329 - INFO - Centralized evaluation (Round 18): Loss=0.4828, Accuracy=0.8118
+2025-07-05 19:28:32,329 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:28:32,329 - INFO - Round 19: Learning rate = 0.000100
+2025-07-05 19:28:32,329 - INFO - Round 19: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:28:32,329 - INFO - Round 19: Sampled clients: ['395d9f4c362642b382c635ef4e9f1073', 'b865eced8aac4d85a851c63617031fdc', 'abb7779e1e9e44729241a9a98ce4f506', 'e8d0ed87e1be4e80a9cf149a628fd842', '7e2f71a1e55e431ca3a33f623c8e3530']
+2025-07-05 19:29:07,957 - INFO - Global model evaluation - Loss: 0.2817, Accuracy: 0.9294
+2025-07-05 19:29:07,958 - INFO - Centralized evaluation (Round 19): Loss=0.2817, Accuracy=0.9294
+2025-07-05 19:29:07,958 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:29:07,958 - INFO - Round 20: Learning rate = 0.000100
+2025-07-05 19:29:07,958 - INFO - Round 20: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:29:07,959 - INFO - Round 20: Sampled clients: ['abb7779e1e9e44729241a9a98ce4f506', '395d9f4c362642b382c635ef4e9f1073', 'e8d0ed87e1be4e80a9cf149a628fd842', 'bcfaa9f38ec4419da6c07f5f267caf23', '61b64eb4d2e640dc9ebb3eac1f6e2c73']
+2025-07-05 19:29:33,167 - INFO - Global model evaluation - Loss: 0.2742, Accuracy: 0.9242
+2025-07-05 19:29:33,170 - INFO - Centralized evaluation (Round 20): Loss=0.2742, Accuracy=0.9242
+2025-07-05 19:29:33,170 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:29:33,170 - INFO - Round 21: Learning rate = 0.000100
+2025-07-05 19:29:33,170 - INFO - Round 21: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:29:33,170 - INFO - Round 21: Sampled clients: ['bcfaa9f38ec4419da6c07f5f267caf23', '395d9f4c362642b382c635ef4e9f1073', '147179d9f6894e2ebbc29c4b0d56aba7', 'b865eced8aac4d85a851c63617031fdc', '5e0e51c3ecb449a0996ef8f28303dca7']
+2025-07-05 19:30:14,608 - INFO - Global model evaluation - Loss: 0.5764, Accuracy: 0.7280
+2025-07-05 19:30:14,609 - INFO - Centralized evaluation (Round 21): Loss=0.5764, Accuracy=0.7280
+2025-07-05 19:30:14,610 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:30:14,610 - INFO - Round 22: Learning rate = 0.000100
+2025-07-05 19:30:14,610 - INFO - Round 22: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:30:14,610 - INFO - Round 22: Sampled clients: ['bcfaa9f38ec4419da6c07f5f267caf23', '61b64eb4d2e640dc9ebb3eac1f6e2c73', '147179d9f6894e2ebbc29c4b0d56aba7', '21f9407410b741a99a4a627a5cc675d6', 'e8d0ed87e1be4e80a9cf149a628fd842']
+2025-07-05 19:30:44,150 - INFO - Global model evaluation - Loss: 0.3384, Accuracy: 0.8992
+2025-07-05 19:30:44,157 - INFO - Centralized evaluation (Round 22): Loss=0.3384, Accuracy=0.8992
+2025-07-05 19:30:44,157 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:30:44,157 - INFO - Round 23: Learning rate = 0.000100
+2025-07-05 19:30:44,158 - INFO - Round 23: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:30:44,158 - INFO - Round 23: Sampled clients: ['147179d9f6894e2ebbc29c4b0d56aba7', '21f9407410b741a99a4a627a5cc675d6', 'abb7779e1e9e44729241a9a98ce4f506', '395d9f4c362642b382c635ef4e9f1073', '5e0e51c3ecb449a0996ef8f28303dca7']
+2025-07-05 19:31:27,710 - INFO - Global model evaluation - Loss: 0.5448, Accuracy: 0.7593
+2025-07-05 19:31:27,710 - INFO - Centralized evaluation (Round 23): Loss=0.5448, Accuracy=0.7593
+2025-07-05 19:31:27,711 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:31:27,711 - INFO - Round 24: Learning rate = 0.000100
+2025-07-05 19:31:27,711 - INFO - Round 24: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:31:27,711 - INFO - Round 24: Sampled clients: ['bcfaa9f38ec4419da6c07f5f267caf23', 'abb7779e1e9e44729241a9a98ce4f506', '395d9f4c362642b382c635ef4e9f1073', '61b64eb4d2e640dc9ebb3eac1f6e2c73', '21f9407410b741a99a4a627a5cc675d6']
+2025-07-05 19:31:48,334 - INFO - Global model evaluation - Loss: 0.3245, Accuracy: 0.9149
+2025-07-05 19:31:48,339 - INFO - Centralized evaluation (Round 24): Loss=0.3245, Accuracy=0.9149
+2025-07-05 19:31:48,339 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:31:48,339 - INFO - Round 25: Learning rate = 0.000100
+2025-07-05 19:31:48,339 - INFO - Round 25: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:31:48,340 - INFO - Round 25: Sampled clients: ['5e0e51c3ecb449a0996ef8f28303dca7', '61b64eb4d2e640dc9ebb3eac1f6e2c73', '7e2f71a1e55e431ca3a33f623c8e3530', 'b865eced8aac4d85a851c63617031fdc', '21f9407410b741a99a4a627a5cc675d6']
+2025-07-05 19:32:27,118 - INFO - Global model evaluation - Loss: 0.4899, Accuracy: 0.7991
+2025-07-05 19:32:27,118 - INFO - Centralized evaluation (Round 25): Loss=0.4899, Accuracy=0.7991
+2025-07-05 19:32:27,119 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:32:27,119 - INFO - Round 26: Learning rate = 0.000100
+2025-07-05 19:32:27,119 - INFO - Round 26: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:32:27,119 - INFO - Round 26: Sampled clients: ['61b64eb4d2e640dc9ebb3eac1f6e2c73', '5e0e51c3ecb449a0996ef8f28303dca7', 'abb7779e1e9e44729241a9a98ce4f506', 'b865eced8aac4d85a851c63617031fdc', '21f9407410b741a99a4a627a5cc675d6']
+2025-07-05 19:33:04,329 - INFO - Global model evaluation - Loss: 0.5833, Accuracy: 0.7376
+2025-07-05 19:33:04,332 - INFO - Centralized evaluation (Round 26): Loss=0.5833, Accuracy=0.7376
+2025-07-05 19:33:04,333 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:33:04,333 - INFO - Round 27: Learning rate = 0.000100
+2025-07-05 19:33:04,333 - INFO - Round 27: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:33:04,333 - INFO - Round 27: Sampled clients: ['b865eced8aac4d85a851c63617031fdc', '7e2f71a1e55e431ca3a33f623c8e3530', '61b64eb4d2e640dc9ebb3eac1f6e2c73', 'e8d0ed87e1be4e80a9cf149a628fd842', 'abb7779e1e9e44729241a9a98ce4f506']
+2025-07-05 19:33:38,851 - INFO - Global model evaluation - Loss: 0.2868, Accuracy: 0.9292
+2025-07-05 19:33:38,854 - INFO - Centralized evaluation (Round 27): Loss=0.2868, Accuracy=0.9292
+2025-07-05 19:33:38,855 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:33:38,855 - INFO - Round 28: Learning rate = 0.000100
+2025-07-05 19:33:38,855 - INFO - Round 28: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:33:38,855 - INFO - Round 28: Sampled clients: ['abb7779e1e9e44729241a9a98ce4f506', '395d9f4c362642b382c635ef4e9f1073', 'b865eced8aac4d85a851c63617031fdc', 'e8d0ed87e1be4e80a9cf149a628fd842', '147179d9f6894e2ebbc29c4b0d56aba7']
+2025-07-05 19:34:10,537 - INFO - Global model evaluation - Loss: 0.2944, Accuracy: 0.9141
+2025-07-05 19:34:10,537 - INFO - Centralized evaluation (Round 28): Loss=0.2944, Accuracy=0.9141
+2025-07-05 19:34:10,538 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:34:10,538 - INFO - Round 29: Learning rate = 0.000100
+2025-07-05 19:34:10,538 - INFO - Round 29: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:34:10,538 - INFO - Round 29: Sampled clients: ['7e2f71a1e55e431ca3a33f623c8e3530', '21f9407410b741a99a4a627a5cc675d6', '395d9f4c362642b382c635ef4e9f1073', '5e0e51c3ecb449a0996ef8f28303dca7', 'e8d0ed87e1be4e80a9cf149a628fd842']
+2025-07-05 19:34:50,172 - INFO - Global model evaluation - Loss: 0.4873, Accuracy: 0.7902
+2025-07-05 19:34:50,175 - INFO - Centralized evaluation (Round 29): Loss=0.4873, Accuracy=0.7902
+2025-07-05 19:34:50,175 - INFO - Base learning rate: 1e-4 (type: <class 'str'>) -> 0.0001
+2025-07-05 19:34:50,176 - INFO - Round 30: Learning rate = 0.000100
+2025-07-05 19:34:50,176 - INFO - Round 30: Sampled 5 clients out of 10 available clients (fraction_fit=0.50)
+2025-07-05 19:34:50,176 - INFO - Round 30: Sampled clients: ['21f9407410b741a99a4a627a5cc675d6', 'e8d0ed87e1be4e80a9cf149a628fd842', 'bcfaa9f38ec4419da6c07f5f267caf23', 'b865eced8aac4d85a851c63617031fdc', '7e2f71a1e55e431ca3a33f623c8e3530']
+2025-07-05 19:35:23,838 - INFO - Global model evaluation - Loss: 0.3085, Accuracy: 0.9174
+2025-07-05 19:35:23,841 - INFO - Centralized evaluation (Round 30): Loss=0.3085, Accuracy=0.9174

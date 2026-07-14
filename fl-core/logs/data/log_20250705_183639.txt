@@ -1,0 +1,16 @@
+2025-07-05 18:36:39,697 - INFO - Loaded datasets - Train: 77002, Test: 8666, Validation: 13383
+2025-07-05 18:36:39,745 - INFO - Client 0: Train=4523, Test=1131
+2025-07-05 18:36:39,758 - INFO - Client 1: Train=8177, Test=2045
+2025-07-05 18:36:39,775 - INFO - Client 2: Train=9276, Test=2319
+2025-07-05 18:36:39,785 - INFO - Client 3: Train=4888, Test=1222
+2025-07-05 18:36:39,797 - INFO - Client 4: Train=4280, Test=1071
+2025-07-05 18:36:39,806 - INFO - Client 5: Train=5600, Test=1401
+2025-07-05 18:36:39,816 - INFO - Client 6: Train=5444, Test=1361
+2025-07-05 18:36:39,826 - INFO - Client 7: Train=5252, Test=1313
+2025-07-05 18:36:39,851 - INFO - Client 8: Train=11471, Test=2868
+2025-07-05 18:36:39,872 - INFO - Client 9: Train=9620, Test=2406
+2025-07-05 18:36:42,071 - INFO - Saved non_iid partition data to federated_data/non_iid_partition
+2025-07-05 18:36:42,105 - INFO - Federated dataset creation completed!
+2025-07-05 18:36:42,106 - INFO - Partition type: non_iid
+2025-07-05 18:36:42,106 - INFO - Number of clients: 10
+2025-07-05 18:36:42,106 - INFO - Data saved to: federated_data/non_iid_partition

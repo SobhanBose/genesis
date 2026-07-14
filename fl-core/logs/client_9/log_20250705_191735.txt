@@ -1,0 +1,23 @@
+2025-07-05 19:17:35,470 - INFO - Using device: cuda
+2025-07-05 19:17:35,567 - INFO - Loaded client data - Train: 9620, Test: 2406
+2025-07-05 19:17:35,572 - INFO - Preprocessing components initialized
+2025-07-05 19:17:35,578 - INFO - Initialized model with input size: 173
+2025-07-05 19:17:36,320 - INFO - Client 9 initialized successfully
+2025-07-05 19:17:36,321 - INFO - Starting client 9
+2025-07-05 19:17:36,321 - INFO - Connecting to server at localhost:8080
+2025-07-05 19:17:36,321 - INFO - Training data: 9620 samples
+2025-07-05 19:17:36,321 - INFO - Test data: 2406 samples
+2025-07-05 19:17:36,364 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:19:16,601 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:19:51,710 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:20:25,278 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:21:08,110 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:22:22,937 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:25:52,341 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:26:32,009 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:27:49,940 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:28:32,490 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:31:48,450 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:33:04,410 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:34:10,649 - INFO - FedProx training with proximal_mu=0.01
+2025-07-05 19:34:50,267 - INFO - FedProx training with proximal_mu=0.01

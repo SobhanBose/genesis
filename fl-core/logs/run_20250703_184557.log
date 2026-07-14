@@ -1,0 +1,5 @@
+2025-07-03 18:45:57,217 - INFO - Loaded validation data: 13383 samples
+2025-07-03 18:45:57,221 - INFO - Preprocessing components initialized
+2025-07-03 18:45:57,227 - INFO - Initialized model with input size: 173
+2025-07-03 18:45:57,227 - INFO - Federated server initialized successfully
+2025-07-03 18:45:57,227 - INFO - Starting federated server on port 8080
