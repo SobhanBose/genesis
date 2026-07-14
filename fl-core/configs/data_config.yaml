@@ -1,0 +1,26 @@
+
+# Data Configuration
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  gene_embeddings_dir: "data/gene_embeddings"
+  
+  files:
+    train: "train.csv"
+    test: "test.csv"
+    validation: "orthogonal.csv"
+    gene_embeddings: "gene2vec_dim_200_iter_9_w2v.tsv"
+
+preprocessing:
+  normalize: true
+  handle_missing: "drop"  # or "impute"
+  feature_selection: false
+
+federated:
+  output_dir: "federated_data"
+  partitions:
+    - type: "iid"
+      n_clients: 5
+    - type: "non_iid" 
+      n_clients: 5
+      alpha: 0.5
