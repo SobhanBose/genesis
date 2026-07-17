@@ -1,0 +1,123 @@
+best_fold: !!python/object/apply:numpy.core.multiarray.scalar
+- !!python/object/apply:numpy.dtype
+  args:
+  - i8
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - -1
+  - -1
+  - 0
+- !!binary |
+  AwAAAAAAAAA=
+cv_statistics:
+  max_test_accuracy: !!python/object/apply:numpy.core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    f/STw/rC7j8=
+  max_test_f1: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    vSvw2uTQ7j8=
+  max_test_precision: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    +oh3TTP07j8=
+  max_test_recall: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    baxdygT87j8=
+  max_test_roc_auc: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    gCkTtgnH7z8=
+  mean_test_accuracy: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    /uKeQEm+7j8=
+  mean_test_f1: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    SpmCEi3K7j8=
+  mean_test_precision: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    LnFkhN/N7j8=
+  mean_test_recall: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    3Y7v/87G7j8=
+  mean_test_roc_auc: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    y6O2HYzE7z8=
+  min_test_accuracy: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    ayyKfRC07j8=
+  min_test_f1: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    gj6DNU+/7j8=
+  min_test_precision: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    4LbJuIWD7j8=
+  min_test_recall: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    U9X0dQqp7j8=
+  min_test_roc_auc: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    deQy7ZDA7z8=
+  std_test_accuracy: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    hCs5ay7SRj8=
+  std_test_f1: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    ISv7IwNAST8=
+  std_test_precision: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    pVBFmT3DdD8=
+  std_test_recall: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    ndfKKiRlbj8=
+  std_test_roc_auc: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    qV0XcQLqMj8=
+feature_engineering_summary:
+  feature_importance: {}
+  feature_selectors: []
+  pca_models: []
+  scalers:
+  - standard
+final_val_accuracy: 0.7744153029963387
+final_val_f1: 0.45905751657409066
+final_val_loss: 0.6283966541290283
+final_val_precision: 0.29978937514626725
+final_val_recall: 0.9793577981651376
+final_val_roc_auc: 0.9501391658910606

@@ -1,0 +1,33 @@
+aggregated_metrics:
+  max_mu: 0.025600000000000008
+  mean_adaptations: !!python/object/apply:numpy.core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    AAAAAAAACEA=
+  mean_mu: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    L0Mc6+I2mj8=
+  min_mu: 0.025600000000000008
+  participating_clients: 8
+  std_mu: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    AAAAAAAAAAA=
+  total_adaptations: 24
+num_clients: 8
+round: 1
+timestamp: '2025-08-29T12:52:01.805202'

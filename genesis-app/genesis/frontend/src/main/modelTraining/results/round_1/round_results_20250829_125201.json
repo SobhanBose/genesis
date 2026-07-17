@@ -1,0 +1,103 @@
+{
+  "round": 1,
+  "timestamp": "2025-08-29T12:52:01.804717",
+  "aggregated_metrics": {
+    "mean_mu": 0.025600000000000008,
+    "std_mu": 0.0,
+    "min_mu": 0.025600000000000008,
+    "max_mu": 0.025600000000000008,
+    "total_adaptations": 24,
+    "mean_adaptations": 3.0,
+    "participating_clients": 8
+  },
+  "client_results": {
+    "755626": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "178375": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "579795": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "160027": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "694039": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "544731": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "123935": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    },
+    "1400": {
+      "final_mu": 0.025600000000000008,
+      "total_adaptations": 3,
+      "increases": 0,
+      "decreases": 3,
+      "boundary_hits": {
+        "min": 0,
+        "max": 0
+      },
+      "adaptation_rate": 0.3
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "strategy_name": "fedadam",
+  "experiment_name": "federated_fedadam",
+  "timestamp": "20250831_084338",
+  "client_metrics": {
+    "590224": [
+      {
+        "client_id": 590224,
+        "round": 1,
+        "strategy": "fedadam",
+        "timestamp": "2025-08-31T08:43:02.237394",
+        "final_val_loss": 0.392357061004192,
+        "epochs_trained": 20,
+        "loss": 1.321678382615837,
+        "final_learning_rate": 0.0005,
+        "final_train_loss": 1.0583592133313184
+      }
+    ],
+    "349572": [
+      {
+        "client_id": 349572,
+        "round": 1,
+        "strategy": "fedadam",
+        "timestamp": "2025-08-31T08:43:02.237416",
+        "final_val_loss": 0.5232069973422088,
+        "epochs_trained": 20,
+        "loss": 1.2352002373174715,
+        "final_learning_rate": 0.00025,
+        "final_train_loss": 0.9692100889074989
+      }
+    ],
+    "331853": [
+      {
+        "client_id": 331853,
+        "round": 1,
+        "strategy": "fedadam",
+        "timestamp": "2025-08-31T08:43:02.237423",
+        "final_val_loss": 0.4835392316823365,
+        "epochs_trained": 20,
+        "loss": 1.223234649407713,
+        "final_learning_rate": 0.00025,
+        "final_train_loss": 1.0195653930948505
+      }
+    ],
+    "232088": [
+      {
+        "client_id": 232088,
+        "round": 1,
+        "strategy": "fedadam",
+        "timestamp": "2025-08-31T08:43:02.237429",
+        "final_val_loss": 0.4300686375015074,
+        "epochs_trained": 20,
+        "loss": 1.1959842536198335,
+        "final_learning_rate": 0.00025,
+        "final_train_loss": 0.9505436890316705
+      }
+    ],
+    "106288": [
+      {
+        "client_id": 106288,
+        "round": 1,
+        "strategy": "fedadam",
+        "timestamp": "2025-08-31T08:43:02.237436",
+        "final_val_loss": 0.5695348143577575,
+        "epochs_trained": 20,
+        "loss": 1.3493987172842026,
+        "final_learning_rate": 0.0005,
+        "final_train_loss": 1.058098989725113
+      }
+    ]
+  },
+  "round_metrics": {
+    "1": {
+      "round": 1,
+      "strategy": "fedadam",
+      "timestamp": "2025-08-31T08:43:02.237439",
+      "final_train_loss": 1.001803188573724,
+      "final_learning_rate": 0.00032492375935680624,
+      "final_val_loss": 0.48771489633300774,
+      "loss": 1.2554016808426844,
+      "epochs_trained": 20.0,
+      "fedadam_server_round": 1
+    }
+  },
+  "strategy_specific_metrics": {},
+  "convergence_history": [
+    {
+      "round": 1,
+      "strategy": "fedadam",
+      "timestamp": "2025-08-31T08:43:02.237460",
+      "loss": 1.2554016808426844,
+      "accuracy": null,
+      "loss_improvement": null,
+      "convergence_rate": null,
+      "gradient_norm": null
+    }
+  ],
+  "strategy_summary": {
+    "strategy_name": "fedadam",
+    "experiment_name": "federated_fedadam",
+    "total_clients": 5,
+    "total_rounds": 1,
+    "timestamp": "2025-08-31T08:43:38.838301",
+    "convergence_summary": {
+      "final_loss": 1.2554016808426844,
+      "best_loss": 1.2554016808426844,
+      "loss_improvement_total": null,
+      "final_accuracy": null,
+      "best_accuracy": null,
+      "total_convergence_entries": 1
+    },
+    "fedadam_summary": {
+      "metrics_availability": {
+        "has_state_history": false,
+        "has_convergence_history": true,
+        "convergence_entries_count": 1,
+        "state_history_rounds": 0
+      }
+    }
+  },
+  "fedadam_state_history": {},
+  "fedadam_convergence_analysis": {},
+  "fedadam_metrics_metadata": {
+    "convergence_entries_with_fedadam_metrics": 0,
+    "available_fedadam_metrics": [],
+    "state_history_rounds": 0
+  }
+}

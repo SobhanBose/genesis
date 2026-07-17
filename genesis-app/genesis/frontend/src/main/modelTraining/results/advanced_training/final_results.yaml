@@ -1,0 +1,25 @@
+best_test_loss: 0.13298962795143499
+feature_engineering_summary:
+  feature_importance: {}
+  feature_selectors: []
+  pca_models: []
+  scalers:
+  - standard
+final_test_accuracy: 0.9524578813754904
+final_test_f1: 0.952621895124195
+final_test_loss: 0.13298962795143499
+final_test_precision: 0.9543778801843318
+final_test_recall: 0.950872359963269
+final_test_roc_auc: 0.9890533951623383
+final_train_accuracy: 0.9643775486351004
+final_train_f1: 0.9639472681150848
+final_train_loss: 0.09136748379132627
+final_train_precision: 0.9731953290870489
+final_train_recall: 0.9548733171887613
+final_train_roc_auc: 0.9948564190669079
+final_val_accuracy: 0.7265934394380931
+final_val_f1: 0.40955300952073587
+final_val_loss: 0.7698551283942329
+final_val_precision: 0.2595622826753937
+final_val_recall: 0.9701834862385321
+final_val_roc_auc: 0.9478567946258414

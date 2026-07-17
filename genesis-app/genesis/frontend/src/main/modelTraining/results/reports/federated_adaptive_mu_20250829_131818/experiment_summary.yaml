@@ -1,0 +1,411 @@
+client_summaries:
+  1400:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - &id001 !!python/object/apply:numpy.dtype
+        args:
+        - f8
+        - false
+        - true
+        state: !!python/tuple
+        - 3
+        - <
+        - null
+        - null
+        - null
+        - -1
+        - -1
+        - 0
+      - !!binary |
+        zczMzMzMIkA=
+      rounds_with_adaptations: 15
+      total_adaptations: 141
+    client_id: 1400
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        uoUPIeBWfD8=
+      min: 0.005368709120000003
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        huwUkj6udD8=
+      values:
+      - 0.025600000000000008
+      - 0.008388608000000004
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+    total_rounds: 15
+  123935:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        2Ymd2ImdIkA=
+      rounds_with_adaptations: 13
+      total_adaptations: 121
+    client_id: 123935
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        WyjE7+5QfT8=
+      min: 0.005368709120000003
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        aeIxV4wNdj8=
+      values:
+      - 0.025600000000000008
+      - 0.008388608000000004
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+    total_rounds: 13
+  160027:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        8fDw8PDwIkA=
+      rounds_with_adaptations: 17
+      total_adaptations: 161
+    client_id: 160027
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        SfoboaeXez8=
+      min: 0.005368709120000003
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        z29eupKIcz8=
+      values:
+      - 0.025600000000000008
+      - 0.008388608000000004
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+    total_rounds: 17
+  178375:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        AAAAAACAIkA=
+      rounds_with_adaptations: 12
+      total_adaptations: 111
+    client_id: 178375
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        AA71MDjtfT8=
+      min: 0.005368709120000003
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        HMlv2f3Ydj8=
+      values:
+      - 0.025600000000000008
+      - 0.008388608000000004
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+    total_rounds: 12
+  305869:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        WlpaWlpaHkA=
+      rounds_with_adaptations: 17
+      total_adaptations: 129
+    client_id: 305869
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        Y1ix5WHxhD8=
+      min: 0.006710886400000004
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        5v5+pzjjdT8=
+      values:
+      - 0.025600000000000008
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.013107200000000006
+      - 0.010485760000000005
+      - 0.008388608000000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+      - 0.006710886400000004
+    total_rounds: 17
+  544731:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        t23btm3bFkA=
+      rounds_with_adaptations: 14
+      total_adaptations: 80
+    client_id: 544731
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        XuYIdIEmjT8=
+      min: 0.013107200000000006
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        KrOrGKW6aj8=
+      values:
+      - 0.025600000000000008
+      - 0.016384000000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+      - 0.013107200000000006
+    total_rounds: 14
+  579795:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        AAAAAAAAI0A=
+      rounds_with_adaptations: 18
+      total_adaptations: 171
+    client_id: 579795
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        3CohwfpHez8=
+      min: 0.005368709120000003
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        MPlhPsYGcz8=
+      values:
+      - 0.025600000000000008
+      - 0.008388608000000004
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+    total_rounds: 18
+  694039:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        iIeHh4eHE0A=
+      rounds_with_adaptations: 17
+      total_adaptations: 83
+    client_id: 694039
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        1S74hhRVkT8=
+      min: 0.016384000000000006
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        tShIyJzDYT8=
+      values:
+      - 0.025600000000000008
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+    total_rounds: 17
+  755626:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        AAAAAADgIkA=
+      rounds_with_adaptations: 16
+      total_adaptations: 151
+    client_id: 755626
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        pCMWHUrxez8=
+      min: 0.005368709120000003
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        PJsT5jQVdD8=
+      values:
+      - 0.025600000000000008
+      - 0.008388608000000004
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+      - 0.005368709120000003
+    total_rounds: 16
+  951946:
+    adaptation_statistics:
+      mean_per_round: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        J3ZiJ3ZiE0A=
+      rounds_with_adaptations: 13
+      total_adaptations: 63
+    client_id: 951946
+    mu_statistics:
+      max: 0.025600000000000008
+      mean: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        1wdvps6AkT8=
+      min: 0.016384000000000006
+      std: !!python/object/apply:numpy.core.multiarray.scalar
+      - *id001
+      - !!binary |
+        Lw+7sSUeZD8=
+      values:
+      - 0.025600000000000008
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+      - 0.016384000000000006
+    total_rounds: 13
+experiment_name: federated_adaptive_mu
+overall_statistics:
+  adaptation_statistics:
+    mean_per_training: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      5TWU11DeH0A=
+    total_adaptations: 1211
+    trainings_with_adaptations: 152
+  mu_statistics:
+    max: 0.025600000000000008
+    mean: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      ahrvHERchD8=
+    min: 0.005368709120000003
+    std: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      PMJoPRIMeT8=
+    total_values: 152
+timestamp: '2025-08-29T13:18:18.076888'
+total_clients: 10
+total_rounds: 19
+total_training_entries: 152

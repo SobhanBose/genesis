@@ -1,0 +1,58 @@
+{
+  "2": {
+    "round": 2,
+    "timestamp": "2025-08-31T08:19:05.911126",
+    "momentum_stats": {
+      "momentum_norm_mean": 0.09915604474030082,
+      "momentum_norm_std": 0.079406845828302,
+      "momentum_norm_min": 7.028358437808481e-06,
+      "momentum_norm_max": 0.19999999999999996
+    },
+    "variance_stats": {
+      "variance_norm_mean": 0.00017418130139636748,
+      "variance_norm_std": 0.0003337566020913741,
+      "variance_norm_min": 3.696555430067076e-13,
+      "variance_norm_max": 0.0010000000000000007
+    },
+    "bias_corrections": {
+      "bias_correction_1": 0.3599999999999999,
+      "bias_correction_2": 0.001998999999999973
+    },
+    "numerical_stability": {
+      "has_nan_momentum": false,
+      "has_inf_momentum": false,
+      "has_nan_variance": false,
+      "has_inf_variance": false,
+      "min_variance": 1.0505099354322426e-21,
+      "max_momentum": 0.19999999999999993
+    }
+  },
+  "3": {
+    "round": 3,
+    "timestamp": "2025-08-31T08:23:47.514248",
+    "momentum_stats": {
+      "momentum_norm_mean": 0.1748424603464093,
+      "momentum_norm_std": 0.141466273159647,
+      "momentum_norm_min": 2.3561884236515724e-05,
+      "momentum_norm_max": 0.3599999999999999
+    },
+    "variance_stats": {
+      "variance_norm_mean": 0.00034667831713379004,
+      "variance_norm_std": 0.0006675870844948765,
+      "variance_norm_min": 4.951506607404404e-12,
+      "variance_norm_max": 0.0019990000000000016
+    },
+    "bias_corrections": {
+      "bias_correction_1": 0.4879999999999999,
+      "bias_correction_2": 0.002997000999999999
+    },
+    "numerical_stability": {
+      "has_nan_momentum": false,
+      "has_inf_momentum": false,
+      "has_nan_variance": false,
+      "has_inf_variance": false,
+      "min_variance": 1.793666639024091e-18,
+      "max_momentum": 0.3599999999999999
+    }
+  }
+}
