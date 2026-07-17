@@ -1,0 +1,87 @@
+# FedProx Strategy Configuration Example
+#
+# FedProx (Federated Proximal) adds a proximal regularization term to handle
+# data heterogeneity and system heterogeneity in federated learning.
+#
+# Best for:
+# - Heterogeneous (non-IID) data distributions
+# - Systems with varying client capabilities
+# - Scenarios requiring robustness to client drift
+#
+# Advantages:
+# - Handles data heterogeneity well
+# - Supports adaptive regularization
+# - Robust to partial client participation
+#
+# Disadvantages:
+# - Additional hyperparameter (proximal_mu) to tune
+# - Slightly higher computational overhead
+
+federated:
+  # Strategy selection (required)
+  strategy: "FedProx"
+  
+  # Legacy parameter for backward compatibility
+  # This will be used if strategies.fedprox.proximal_mu is not specified
+  proximal_mu: 0.075
+  
+  # Strategy-specific configuration
+  strategies:
+    fedprox:
+      # Proximal regularization weight
+      # Higher values = more regularization = less client drift
+      # Recommended ranges:
+      # - Homogeneous data: 0.01 - 0.05
+      # - Moderately heterogeneous: 0.05 - 0.1
+      # - Highly heterogeneous: 0.1 - 0.5
+      proximal_mu: 0.075
+      
+      # Optional: Adaptive proximal mu (automatically adjusts proximal_mu)
+      # Uncomment to enable adaptive behavior
+      # adaptive_proximal_mu:
+      #   enabled: true
+      #   min_mu: 0.001              # Minimum allowed mu value
+      #   max_mu: 0.5                # Maximum allowed mu value
+      #   increase_factor: 1.5       # Multiply mu by this when loss increases
+      #   decrease_factor: 0.8       # Multiply mu by this when loss decreases
+      #   window_size: 5             # Number of rounds for trend analysis
+      #   trend_threshold: 0.01      # Minimum relative change to trigger adaptation
+      #   adaptation_patience: 2     # Consecutive observations before adapting
+  
+  # Server configuration
+  server:
+    rounds: 50                    # Number of federated learning rounds
+    min_fit_clients: 3            # Minimum clients required for training
+    min_available_clients: 3      # Minimum clients that must be available
+    fraction_fit: 1.0             # Fraction of clients to use for training
+    fraction_evaluate: 1.0        # Fraction of clients to use for evaluation
+    
+  # Client configuration
+  client:
+    local_epochs: 5               # Number of local training epochs per round
+    
+  # Evaluation configuration
+  evaluation:
+    centralized_evaluation: true  # Enable server-side evaluation on validation set
+
+# Recommended client-side parameters (set in model_config.yaml):
+# training:
+#   learning_rate: 0.001         # Standard learning rate for FedProx
+#   batch_size: 32               # Batch size for local training
+#   optimizer: "adam"            # Optimizer for local training
+#   weight_decay: 1e-4           # L2 regularization
+#   max_grad_norm: 1.0           # Gradient clipping for stability
+
+# Performance tuning tips for FedProx:
+# 1. Start with proximal_mu=0.075 and adjust based on data heterogeneity
+# 2. For slow convergence: Reduce proximal_mu or enable adaptive_proximal_mu
+# 3. For unstable training: Increase proximal_mu or reduce learning rates
+# 4. For highly heterogeneous data: Use proximal_mu=0.1-0.5
+# 5. Enable adaptive_proximal_mu for automatic tuning during training
+
+# Common proximal_mu values by scenario:
+# - IID data (baseline): 0.01 - 0.03
+# - Mild non-IID: 0.05 - 0.1
+# - Moderate non-IID: 0.1 - 0.2
+# - Severe non-IID: 0.2 - 0.5
+# - System heterogeneity: 0.05 - 0.15

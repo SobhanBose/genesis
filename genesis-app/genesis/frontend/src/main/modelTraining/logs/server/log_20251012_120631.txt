@@ -1,0 +1,35 @@
+2025-10-12 12:06:31,556 - INFO - Initializing simplified federated server
+2025-10-12 12:06:31,556 - INFO - Using device: cpu
+2025-10-12 12:06:31,702 - INFO - Loaded validation data: 13383 samples
+2025-10-12 12:06:31,782 - INFO - Preprocessing components initialized
+2025-10-12 12:06:31,848 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2025-10-12 12:06:33,106 - INFO - Simplified federated server initialized successfully
+2025-10-12 12:06:33,106 - INFO - Strategy detection complete: Selected 'FedProx' strategy
+2025-10-12 12:06:33,106 - INFO - Strategy configuration loaded for FedProx
+2025-10-12 12:06:33,107 - INFO - FedProx parameters - proximal_mu: 0.075
+2025-10-12 12:06:33,107 - INFO - Creating FedProx strategy instance using StrategyFactory...
+2025-10-12 12:06:33,108 - INFO - Creating FedProx strategy with server-initialized parameters
+2025-10-12 12:06:33,108 - INFO - Server parameter initialization: All clients will receive identical starting parameters
+2025-10-12 12:06:33,109 - INFO - FedProx: Extracting initial parameters from server model (proximal_mu=0.075)
+2025-10-12 12:06:33,109 - INFO - Extracting parameters from model with 37 layers
+2025-10-12 12:06:33,116 - INFO - Parameter extraction statistics: 37 layers, 267687 total parameters
+2025-10-12 12:06:33,116 - INFO - Parameter data types: float32, int64
+2025-10-12 12:06:33,117 - INFO - Parameter shapes: (512, 173), (512,), (512,), (512,), (512,) ... (32 more)
+2025-10-12 12:06:33,122 - INFO - Successfully extracted and validated 37 parameter tensors (267687 total parameters) from server model
+2025-10-12 12:06:33,123 - INFO - FedProx strategy initialized with server parameter initialization and proximal_mu=0.075
+2025-10-12 12:06:33,123 - INFO - Successfully created FedProx strategy with proximal_mu=0.075 and server parameter initialization
+2025-10-12 12:06:33,123 - INFO - Successfully created FedProx strategy instance
+2025-10-12 12:06:33,123 - INFO - Strategy instantiation verified: SimpleFedProxStrategy
+2025-10-12 12:06:33,124 - INFO - Server configuration - rounds: 1, min_fit_clients: 1, min_available_clients: 1, fraction_fit: 1.0, fraction_evaluate: 1.0
+2025-10-12 12:06:33,124 - INFO - Starting federated server with FedProx strategy on port 8080
+2025-10-12 12:06:33,124 - INFO - Server will run for 1 rounds
+2025-10-12 12:06:33,124 - INFO - ============================================================
+2025-10-12 12:06:33,125 - INFO - FEDERATED SERVER STARTUP COMPLETE
+2025-10-12 12:06:33,125 - INFO - ============================================================
+2025-10-12 12:06:33,474 - INFO - Centralized evaluation (Round 0): Loss=2.0076, Accuracy=0.5926
+2025-10-12 12:07:34,128 - INFO - Round 1: Sampled 1 clients out of 1 available clients (fraction_fit=1.00)
+2025-10-12 12:07:34,129 - INFO - Round 1: Sampled clients: ['464296bcaf2643a9b8e7cf690c3a35f0']
+2025-10-12 12:09:44,900 - INFO - Round 1: Aggregated client training metrics - loss: 1.9025, epochs_trained: 10.0000, final_val_loss: 0.6430, final_learning_rate: 0.0001
+2025-10-12 12:09:45,016 - INFO - Centralized evaluation (Round 1): Loss=0.7129, Accuracy=0.3907
+2025-10-12 12:09:45,017 - INFO - Round 1: Configured evaluation for 1 clients out of 1 available
+2025-10-12 12:09:47,379 - INFO - Round 1: Aggregated client evaluation metrics - loss: 0.6430, accuracy: 0.6132

@@ -1,0 +1,13 @@
+2025-09-27 17:03:02,721 - INFO - Using device: cpu
+2025-09-27 17:03:03,019 - INFO - Loaded client data - Train: 14385, Test: 3597
+2025-09-27 17:03:03,122 - INFO - Preprocessing components initialized
+2025-09-27 17:03:03,224 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2025-09-27 17:03:05,631 - INFO - Federated Client 1 initialized successfully
+2025-09-27 17:03:05,632 - INFO - Starting federated client 1
+2025-09-27 17:03:05,632 - INFO - Connecting to server at localhost:8080
+2025-09-27 17:03:05,632 - INFO - Training data: 14385 samples
+2025-09-27 17:03:05,632 - INFO - Test data: 3597 samples
+2025-09-27 17:03:05,812 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-27 17:05:47,745 - INFO - Evaluation - Loss: 2.9572, Accuracy: 0.7198
+2025-09-27 17:05:47,791 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-27 17:08:27,365 - INFO - Evaluation - Loss: 10.6515, Accuracy: 0.6083

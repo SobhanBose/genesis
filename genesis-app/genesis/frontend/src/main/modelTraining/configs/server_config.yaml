@@ -1,0 +1,227 @@
+# =============================================================================
+# FEDERATED LEARNING SERVER CONFIGURATION
+# =============================================================================
+#
+# This configuration file contains all server-side parameters for federated
+# learning. It defines strategy selection, server rounds, client selection
+# criteria, and evaluation settings.
+#
+# CONFIGURATION STRUCTURE:
+# - server: Core server parameters (rounds, client selection, evaluation)
+# - strategy: Strategy selection and strategy-specific parameters
+#
+# SUPPORTED STRATEGIES:
+# - FedAvg: Standard federated averaging with weighted parameter aggregation
+# - FedProx: Federated learning with proximal regularization for heterogeneous data
+# - FedAdam: Server-side adaptive optimization using Adam algorithm
+#
+# =============================================================================
+
+server:
+  # ==========================================================================
+  # CORE SERVER PARAMETERS
+  # ==========================================================================
+  
+  # Number of federated learning rounds to execute
+  # Higher values allow more training iterations but increase total training time
+  # Typical range: 10-200 depending on dataset complexity and convergence needs
+  rounds: 1
+  
+  # Minimum number of clients that must participate in each training round
+  # Lower values allow training with fewer clients but may reduce model quality
+  # Must be <= min_available_clients and <= total number of clients
+  # Typical range: 2-10 for small deployments, 10-100 for larger deployments
+  min_fit_clients: 1
+  
+  # Minimum number of clients that must be available before starting a round
+  # Ensures sufficient client participation for meaningful aggregation
+  # Should be >= min_fit_clients to guarantee enough clients for training
+  # Typical range: Same as or slightly higher than min_fit_clients
+  min_available_clients: 1
+  
+  # Fraction of available clients to select for training in each round
+  # 1.0 = select all available clients, 0.5 = select half of available clients
+  # Lower values reduce communication overhead but may slow convergence
+  # Higher values improve model quality but increase communication costs
+  # Range: 0.1-1.0, commonly 0.3-1.0
+  fraction_fit: 1.0
+  
+  # Fraction of available clients to select for evaluation in each round
+  # Similar to fraction_fit but for model evaluation phase
+  # Can be different from fraction_fit to balance training vs evaluation load
+  # Range: 0.1-1.0, commonly 0.3-1.0
+  fraction_evaluate: 1.0
+  
+  # Minimum number of clients required for evaluation
+  # If not specified, defaults to min_fit_clients
+  # Lower values allow evaluation with fewer clients but may be less reliable
+  # min_eval_clients: 3
+
+# =============================================================================
+# STRATEGY CONFIGURATION
+# =============================================================================
+
+strategy:
+  # Strategy selection - determines the federated learning algorithm to use
+  # Options: "FedAvg", "FedProx", "FedAdam"
+  # 
+  # FedAvg: Best for IID (independent and identically distributed) data
+  #         Simple weighted averaging of client model parameters
+  #         Fastest convergence with homogeneous data
+  #
+  # FedProx: Best for non-IID (heterogeneous) data
+  #          Adds proximal regularization to handle data heterogeneity
+  #          More stable training with diverse client data distributions
+  #
+  # FedAdam: Best for complex optimization landscapes
+  #          Server-side adaptive optimization using Adam algorithm
+  #          Can achieve faster convergence and better final performance
+  name: "FedProx"
+  
+  # =========================================================================
+  # STRATEGY-SPECIFIC PARAMETERS
+  # =========================================================================
+  
+  # FedAdam Strategy Parameters
+  # Used when strategy.name = "FedAdam"
+  fedadam:
+    # First moment decay rate for Adam optimizer
+    # Controls the exponential decay rate for the first moment estimates
+    # Higher values give more weight to recent gradients
+    # Range: [0.0, 1.0), commonly 0.9-0.999
+    # Default: 0.9 (same as standard Adam)
+    beta1: 0.9
+    
+    # Second moment decay rate for Adam optimizer  
+    # Controls the exponential decay rate for the second moment estimates
+    # Higher values give more weight to recent squared gradients
+    # Range: [0.0, 1.0), commonly 0.99-0.9999
+    # Default: 0.999 (same as standard Adam)
+    beta2: 0.999
+    
+    # Server learning rate for parameter updates
+    # Controls how aggressively the server updates the global model
+    # Higher values lead to faster convergence but may cause instability
+    # Lower values provide more stable training but slower convergence
+    # Range: 1e-5 to 1e-1, commonly 1e-4 to 1e-2
+    # Default: 0.001
+    server_lr: 0.01
+    
+    # Numerical stability parameter (epsilon)
+    # Small constant added to denominator to prevent division by zero
+    # Smaller values may improve convergence but risk numerical instability
+    # Range: 1e-8 to 1e-4, commonly 1e-7 to 1e-6
+    # Default: 1e-6
+    epsilon: 1e-6
+  
+  # FedProx Strategy Parameters
+  # Used when strategy.name = "FedProx"
+  fedprox:
+    # Proximal regularization parameter (mu)
+    # Controls the strength of the proximal term that keeps client updates
+    # close to the global model, helping with non-IID data
+    # Higher values provide stronger regularization but may slow convergence
+    # Lower values allow more client deviation but may reduce stability
+    # Range: 0.001-1.0, commonly 0.01-0.1
+    # Default: 0.075 (empirically good for many scenarios)
+    proximal_mu: 0.075
+  
+  # FedAvg Strategy Parameters
+  # Used when strategy.name = "FedAvg"
+  fedavg:
+    # FedAvg has no additional strategy-specific parameters
+    # It uses only the core server parameters defined above
+    # This section is included for completeness and future extensibility
+    {}
+
+# =============================================================================
+# EVALUATION CONFIGURATION
+# =============================================================================
+
+evaluation:
+  # Enable centralized evaluation on server validation dataset
+  # When true, server evaluates the global model after each round
+  # Provides unbiased performance metrics but requires server-side validation data
+  # When false, relies only on client-side evaluation metrics
+  # Recommended: true for research and development, may be false for production
+  centralized_evaluation: true
+  
+  # Save training results and metrics to files
+  # When true, saves round-by-round metrics, model checkpoints, and logs
+  # Useful for analysis and debugging but increases storage requirements
+  # When false, only keeps metrics in memory and basic logging
+  # Recommended: true for experiments, false for production deployments
+  save_results: true
+  
+  # Directory to save results, logs, and model checkpoints
+  # Relative path from the project root directory
+  # Will be created if it doesn't exist
+  # Should have sufficient storage space for model checkpoints and logs
+  results_dir: "results"
+
+# =============================================================================
+# DATA CONFIGURATION
+# =============================================================================
+
+data:
+  # Path to validation data file for centralized evaluation
+  # Used by the server to evaluate the global model after each round
+  # Should be relative to the project root directory
+  # Default: "federated_data/non_iid_partition/validation.csv"
+  validation_path: "federated_data/non_iid_partition/validation.csv"
+  
+  # Frequency of model checkpoint saving (in rounds)
+  # Save model every N rounds, 0 = save only final model
+  # More frequent saves allow recovery from failures but use more storage
+  # checkpoint_frequency: 10
+  
+  # Enable detailed logging of strategy-specific metrics
+  # When true, logs additional strategy parameters and internal states
+  # Useful for debugging and research but increases log verbosity
+  # detailed_logging: true
+
+# =============================================================================
+# ADVANCED SERVER CONFIGURATION (Optional)
+# =============================================================================
+
+# Uncomment and modify these sections for advanced use cases
+
+# # Client timeout configuration
+# timeouts:
+#   # Maximum time to wait for client responses during fit phase (seconds)
+#   fit_timeout: 300
+#   
+#   # Maximum time to wait for client responses during evaluation phase (seconds)
+#   evaluate_timeout: 120
+
+# # Resource requirements for client selection
+# resource_requirements:
+#   # Minimum RAM required on client (MB)
+#   min_memory_mb: 1024
+#   
+#   # Minimum available CPU cores
+#   min_cpu_cores: 1
+
+# # Custom client sampling configuration
+# sampling:
+#   # Sampling strategy: "random", "round_robin", "performance_based"
+#   strategy: "random"
+#   
+#   # Seed for reproducible client sampling
+#   random_seed: 42
+
+# =============================================================================
+# CONFIGURATION VALIDATION NOTES
+# =============================================================================
+#
+# The following constraints are automatically validated:
+# - min_fit_clients <= min_available_clients
+# - 0.0 < fraction_fit <= 1.0
+# - 0.0 < fraction_evaluate <= 1.0
+# - rounds > 0
+# - Strategy-specific parameters within valid ranges
+#
+# For FedAdam: 0 <= beta1, beta2 < 1, server_lr > 0, epsilon > 0
+# For FedProx: proximal_mu > 0
+#
+# =============================================================================

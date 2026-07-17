@@ -1,0 +1,50 @@
+2025-09-02 21:22:45,697 - INFO - Using device: cuda
+2025-09-02 21:22:45,764 - INFO - Loaded client data - Train: 8539, Test: 2135
+2025-09-02 21:22:45,768 - INFO - Preprocessing components initialized
+2025-09-02 21:22:45,776 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2025-09-02 21:22:46,503 - INFO - Federated Client 3 initialized successfully
+2025-09-02 21:22:46,503 - INFO - Starting federated client 3
+2025-09-02 21:22:46,503 - INFO - Connecting to server at localhost:8080
+2025-09-02 21:22:46,503 - INFO - Training data: 8539 samples
+2025-09-02 21:22:46,503 - INFO - Test data: 2135 samples
+2025-09-02 21:22:48,278 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:27:51,807 - INFO - Evaluation - Loss: 1.5339, Accuracy: 0.7658
+2025-09-02 21:27:53,207 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:32:52,180 - INFO - Evaluation - Loss: 5.5873, Accuracy: 0.6642
+2025-09-02 21:32:53,404 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:37:54,488 - INFO - Evaluation - Loss: 7.4675, Accuracy: 0.6815
+2025-09-02 21:37:55,726 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:43:04,390 - INFO - Evaluation - Loss: 6.4082, Accuracy: 0.7424
+2025-09-02 21:43:05,779 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:48:10,520 - INFO - Evaluation - Loss: 4.4533, Accuracy: 0.8117
+2025-09-02 21:48:12,927 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:53:11,934 - INFO - Evaluation - Loss: 2.8919, Accuracy: 0.8792
+2025-09-02 21:53:13,211 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 21:58:23,877 - INFO - Evaluation - Loss: 2.4212, Accuracy: 0.9166
+2025-09-02 21:58:25,110 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:03:34,396 - INFO - Evaluation - Loss: 2.8427, Accuracy: 0.9349
+2025-09-02 22:03:35,658 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:08:50,608 - INFO - Evaluation - Loss: 3.6612, Accuracy: 0.9377
+2025-09-02 22:08:51,906 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:14:09,970 - INFO - Evaluation - Loss: 4.6589, Accuracy: 0.9433
+2025-09-02 22:14:11,266 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:19:21,402 - INFO - Evaluation - Loss: 5.1955, Accuracy: 0.9391
+2025-09-02 22:19:22,919 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:24:23,180 - INFO - Evaluation - Loss: 5.4401, Accuracy: 0.9340
+2025-09-02 22:24:24,488 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:29:35,231 - INFO - Evaluation - Loss: 5.7404, Accuracy: 0.9269
+2025-09-02 22:29:37,134 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:34:35,984 - INFO - Evaluation - Loss: 5.9244, Accuracy: 0.9237
+2025-09-02 22:34:37,236 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:39:40,761 - INFO - Evaluation - Loss: 5.5752, Accuracy: 0.9194
+2025-09-02 22:39:42,036 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:44:52,180 - INFO - Evaluation - Loss: 4.7414, Accuracy: 0.9166
+2025-09-02 22:44:53,588 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:49:54,446 - INFO - Evaluation - Loss: 3.5927, Accuracy: 0.9204
+2025-09-02 22:49:55,745 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 22:54:54,395 - INFO - Evaluation - Loss: 2.4663, Accuracy: 0.9255
+2025-09-02 22:54:55,774 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 23:00:04,788 - INFO - Evaluation - Loss: 1.6459, Accuracy: 0.9293
+2025-09-02 23:00:06,110 - INFO - FedProx training with fixed proximal_mu=0.010000
+2025-09-02 23:05:10,484 - INFO - Evaluation - Loss: 1.2074, Accuracy: 0.9255
+2025-09-02 23:05:12,399 - INFO - FedProx training with fixed proximal_mu=0.010000

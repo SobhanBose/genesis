@@ -1,0 +1,57 @@
+# FedAvg Strategy Configuration Example
+# 
+# FedAvg (Federated Averaging) is the standard federated learning algorithm
+# that performs weighted averaging of client model parameters.
+#
+# Best for:
+# - Homogeneous (IID) data distributions
+# - Baseline comparisons
+# - Simple federated learning setups
+#
+# Advantages:
+# - Simple and well-understood
+# - Minimal computational overhead
+# - No additional hyperparameters
+#
+# Disadvantages:
+# - Poor performance on heterogeneous (non-IID) data
+# - No regularization for client drift
+
+federated:
+  # Strategy selection (required)
+  strategy: "FedAvg"
+  
+  # Strategy-specific configuration
+  strategies:
+    fedavg:
+      # FedAvg requires no additional parameters
+      # All configuration is handled through server and client settings
+  
+  # Server configuration
+  server:
+    rounds: 50                    # Number of federated learning rounds
+    min_fit_clients: 3            # Minimum clients required for training
+    min_available_clients: 3      # Minimum clients that must be available
+    fraction_fit: 1.0             # Fraction of clients to use for training (1.0 = all)
+    fraction_evaluate: 1.0        # Fraction of clients to use for evaluation (1.0 = all)
+    
+  # Client configuration
+  client:
+    local_epochs: 5               # Number of local training epochs per round
+    
+  # Evaluation configuration
+  evaluation:
+    centralized_evaluation: true  # Enable server-side evaluation on validation set
+
+# Recommended client-side parameters (set in model_config.yaml):
+# training:
+#   learning_rate: 0.001         # Standard learning rate for FedAvg
+#   batch_size: 32               # Batch size for local training
+#   optimizer: "adam"            # Optimizer for local training
+#   weight_decay: 1e-4           # L2 regularization
+
+# Performance tuning tips for FedAvg:
+# 1. For faster convergence: Increase local_epochs (10-20) but reduce rounds
+# 2. For better accuracy: Use smaller learning rates (1e-4) and more rounds
+# 3. For resource constraints: Reduce fraction_fit (0.5-0.8) to use fewer clients
+# 4. For heterogeneous data: Consider switching to FedProx or FedAdam

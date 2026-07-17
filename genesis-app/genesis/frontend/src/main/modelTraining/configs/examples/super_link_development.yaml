@@ -1,0 +1,76 @@
+# Super-Link Development Configuration
+# Optimized for development and testing environments
+
+super_link:
+  # Basic Configuration
+  link_id: "dev_super_link_1"
+  server_address: "localhost"
+  server_port: 8080
+  
+  # Compression Configuration - Disabled for faster development
+  compression_enabled: false
+  compression_algorithm: "gzip"
+  compression_level: 1
+  compression_threshold: 4096
+  
+  # Protocol Configuration - Simple HTTP for development
+  primary_protocol: "http"
+  fallback_protocols:
+    - "tcp"
+  adaptive_protocol: false
+  adaptation_strategy: "manual"
+  
+  # Quality Monitoring - Relaxed thresholds
+  quality_threshold: 0.5
+  monitoring_interval: 60.0
+  quality_history_size: 50
+  
+  # Connection Management - Shorter timeouts for faster feedback
+  connection_timeout: 10.0
+  read_timeout: 30.0
+  write_timeout: 30.0
+  keepalive_interval: 15.0
+  
+  # Retry Configuration - Fewer retries for faster failure detection
+  retry_attempts: 2
+  retry_delay: 0.5
+  retry_backoff_factor: 1.5
+  max_retry_delay: 10.0
+  
+  # Buffer Configuration - Smaller buffers
+  send_buffer_size: 32768
+  receive_buffer_size: 32768
+  max_message_size: 10485760  # 10MB
+  
+  # Security Configuration - Disabled for development
+  enable_tls: false
+  verify_ssl: false
+  
+  # Performance Tuning - Basic settings
+  enable_tcp_nodelay: true
+  enable_tcp_keepalive: false
+  
+  # Monitoring and Logging - Verbose for debugging
+  enable_metrics: true
+  log_level: "DEBUG"
+  log_compression_stats: true
+  log_protocol_switches: true
+  
+  # Advanced Features - Disabled for simplicity
+  enable_multiplexing: false
+  enable_flow_control: false
+
+compression:
+  adaptive_compression: false
+  model_specific_compression: false
+  quantization_enabled: false
+  sparsification_enabled: false
+
+quality:
+  latency_weight: 0.5
+  throughput_weight: 0.3
+  reliability_weight: 0.2
+  latency_threshold_ms: 500.0
+  throughput_threshold_mbps: 1.0
+  reliability_threshold: 0.8
+  degradation_detection_window: 5

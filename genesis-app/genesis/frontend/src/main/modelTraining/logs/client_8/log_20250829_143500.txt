@@ -1,0 +1,86 @@
+2025-08-29 14:35:00,376 - INFO - Federated configuration validated successfully
+2025-08-29 14:35:00,376 - INFO - Visualization components initialized successfully
+2025-08-29 14:35:00,376 - INFO - Using fixed proximal mu
+2025-08-29 14:35:00,413 - INFO - Using device: cuda
+2025-08-29 14:35:00,502 - INFO - Loaded client data - Train: 11471, Test: 2868
+2025-08-29 14:35:00,506 - INFO - Preprocessing components initialized
+2025-08-29 14:35:00,513 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2025-08-29 14:35:01,384 - INFO - Improved Client 8 initialized successfully
+2025-08-29 14:35:01,385 - INFO - Starting improved client 8
+2025-08-29 14:35:01,385 - INFO - Connecting to server at localhost:8080
+2025-08-29 14:35:01,385 - INFO - Training data: 11471 samples
+2025-08-29 14:35:01,385 - INFO - Test data: 2868 samples
+2025-08-29 14:36:16,230 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:37:43,509 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_143743.json
+2025-08-29 14:37:43,595 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:39:12,807 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_143912.json
+2025-08-29 14:40:23,788 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:41:54,676 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_144154.json
+2025-08-29 14:43:04,834 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:44:34,240 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_144434.json
+2025-08-29 14:44:34,318 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:46:09,656 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_144609.json
+2025-08-29 14:47:25,099 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:48:50,442 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_144850.json
+2025-08-29 14:48:50,520 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:50:19,662 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_145019.json
+2025-08-29 14:50:19,787 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:51:45,838 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_145145.json
+2025-08-29 14:51:45,945 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:53:10,095 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_145310.json
+2025-08-29 14:53:10,173 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:54:39,489 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_145439.json
+2025-08-29 14:57:13,786 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 14:58:41,704 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_145841.json
+2025-08-29 14:58:41,785 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:00:06,526 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_150006.json
+2025-08-29 15:00:06,629 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:01:35,261 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_150135.json
+2025-08-29 15:02:48,101 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:04:17,473 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_150417.json
+2025-08-29 15:04:17,553 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:05:45,157 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_150545.json
+2025-08-29 15:05:45,229 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:07:15,766 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_150715.json
+2025-08-29 15:07:15,888 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:08:45,146 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_150845.json
+2025-08-29 15:08:45,237 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:10:14,405 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_151014.json
+2025-08-29 15:10:14,486 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:11:48,105 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_151148.json
+2025-08-29 15:11:48,177 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:13:18,910 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_151318.json
+2025-08-29 15:13:19,017 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:14:51,105 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_151451.json
+2025-08-29 15:16:05,569 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:17:31,824 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_151731.json
+2025-08-29 15:17:31,909 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:19:01,826 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_151901.json
+2025-08-29 15:19:01,924 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:20:31,749 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_152031.json
+2025-08-29 15:20:31,881 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:22:00,110 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_152200.json
+2025-08-29 15:23:14,564 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:24:42,325 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_152442.json
+2025-08-29 15:25:57,631 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:27:27,094 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_152727.json
+2025-08-29 15:28:40,708 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:30:06,615 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_153006.json
+2025-08-29 15:31:25,884 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:32:51,535 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_153251.json
+2025-08-29 15:32:51,673 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:34:15,808 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_153415.json
+2025-08-29 15:34:15,905 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:35:48,587 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_153548.json
+2025-08-29 15:35:48,668 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:37:18,229 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_153718.json
+2025-08-29 15:37:18,312 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:38:47,353 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_153847.json
+2025-08-29 15:40:02,880 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:41:36,522 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_154136.json
+2025-08-29 15:41:36,649 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:43:03,444 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_154303.json
+2025-08-29 15:43:03,528 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:44:35,429 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_154435.json
+2025-08-29 15:44:35,536 - INFO - FedProx training with fixed proximal_mu=0.100000
+2025-08-29 15:46:08,390 - INFO - Training results saved to results/client_8/training_results_round_0_20250829_154608.json

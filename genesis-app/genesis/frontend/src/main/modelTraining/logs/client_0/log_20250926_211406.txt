@@ -1,0 +1,9 @@
+2025-09-26 21:14:06,758 - INFO - Using device: cuda
+2025-09-26 21:14:06,848 - INFO - Loaded client data - Train: 12000, Test: 3000
+2025-09-26 21:14:06,854 - INFO - Preprocessing components initialized
+2025-09-26 21:14:06,861 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2025-09-26 21:14:07,732 - INFO - Federated Client 0 initialized successfully
+2025-09-26 21:14:07,732 - INFO - Starting federated client 0
+2025-09-26 21:14:07,732 - INFO - Connecting to server at localhost:8080
+2025-09-26 21:14:07,732 - INFO - Training data: 12000 samples
+2025-09-26 21:14:07,732 - INFO - Test data: 3000 samples

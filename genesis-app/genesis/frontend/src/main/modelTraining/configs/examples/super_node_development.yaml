@@ -1,0 +1,54 @@
+# Super-Node Development Configuration
+# Optimized for development and testing environments
+
+super_node:
+  # Basic Configuration
+  node_id: "dev_super_node_1"
+  listen_port: 8081
+  server_address: "localhost"
+  server_port: 8080
+  
+  # Client Management - Lower limits for development
+  max_clients: 5
+  heartbeat_interval: 15
+  client_timeout: 60
+  
+  # Aggregation Configuration
+  aggregation_strategy: "fedavg"
+  aggregation_timeout: 120
+  min_clients_for_aggregation: 2
+  
+  # Security Configuration - Relaxed for development
+  security_protocol: "none"
+  
+  # Performance Configuration - Lower resource usage
+  enable_compression: false
+  max_memory_usage: 512
+  thread_pool_size: 2
+  
+  # Monitoring Configuration - Verbose logging for debugging
+  enable_metrics: true
+  metrics_port: 9091
+  log_level: "DEBUG"
+  
+  # Failover Configuration - Disabled for simplicity
+  enable_failover: false
+  reconnect_attempts: 2
+  reconnect_delay: 5
+
+load_balancing:
+  algorithm: "round_robin"
+  health_check_interval: 15
+  unhealthy_threshold: 2
+
+monitoring:
+  enable_prometheus: true
+  prometheus_port: 9091
+  enable_health_checks: true
+  health_check_port: 8083
+  metrics_retention_days: 1
+  alert_thresholds:
+    cpu_usage: 90.0
+    memory_usage: 90.0
+    error_rate: 10.0
+    response_time: 2000.0

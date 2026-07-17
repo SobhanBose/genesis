@@ -1,0 +1,10 @@
+2026-07-13 15:56:50,766 - INFO - Using device: cpu
+2026-07-13 15:56:51,172 - INFO - Loaded client data - Train: 13391, Test: 3348
+2026-07-13 15:56:51,452 - INFO - Preprocessing components initialized
+2026-07-13 15:56:51,572 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2026-07-13 15:56:55,106 - INFO - Federated Client 2 initialized successfully
+2026-07-13 15:56:55,106 - INFO - Starting federated client 2
+2026-07-13 15:56:55,106 - INFO - Connecting to server at localhost:8080
+2026-07-13 15:56:55,106 - INFO - Training data: 13391 samples
+2026-07-13 15:56:55,106 - INFO - Test data: 3348 samples
+2026-07-13 15:56:55,425 - INFO - {} training (no proximal regularization)

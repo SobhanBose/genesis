@@ -1,0 +1,72 @@
+# Super-Node Configuration
+# This configuration defines the settings for a super-node in the hierarchical
+# federated learning architecture.
+
+super_node:
+  # Basic Configuration
+  node_id: "super_node_1"                    # Unique identifier for this super-node
+  listen_port: 8081                          # Port to listen for client connections
+  server_address: "localhost"               # Central server address
+  server_port: 8080                         # Central server port
+  
+  # Client Management
+  max_clients: 10                           # Maximum number of concurrent clients
+  heartbeat_interval: 30                    # Heartbeat interval in seconds
+  client_timeout: 120                       # Client timeout in seconds
+  
+  # Aggregation Configuration
+  aggregation_strategy: "fedavg"            # Local aggregation strategy (fedavg, fedprox, fedadam)
+  aggregation_timeout: 300                  # Aggregation timeout in seconds
+  min_clients_for_aggregation: 2            # Minimum clients required for aggregation
+  
+  # Strategy-specific Parameters (uncomment as needed)
+  # fedprox_mu: 0.1                         # FedProx proximal term coefficient
+  # fedadam_beta1: 0.9                      # FedAdam beta1 parameter
+  # fedadam_beta2: 0.99                     # FedAdam beta2 parameter
+  # fedadam_server_lr: 1.0                  # FedAdam server learning rate
+  # fedadam_epsilon: 1e-8                   # FedAdam epsilon parameter
+  
+  # Security Configuration
+  security_protocol: "none"                 # Security protocol (tls, mtls, none)
+  # certificate_path: "/path/to/cert.pem"   # Path to TLS certificate
+  # private_key_path: "/path/to/key.pem"    # Path to private key
+  # ca_certificate_path: "/path/to/ca.pem"  # Path to CA certificate
+  
+  # Performance Configuration
+  enable_compression: true                  # Enable model compression
+  compression_algorithm: "gzip"             # Compression algorithm (gzip, lz4, zstd)
+  max_memory_usage: 1024                    # Maximum memory usage in MB
+  thread_pool_size: 4                       # Thread pool size for concurrent operations
+  
+  # Monitoring Configuration
+  enable_metrics: true                      # Enable metrics collection
+  metrics_port: 9090                        # Port for metrics endpoint
+  log_level: "INFO"                         # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  
+  # Failover Configuration
+  enable_failover: true                     # Enable automatic failover
+  backup_servers: []                        # List of backup server addresses
+  reconnect_attempts: 5                     # Number of reconnection attempts
+  reconnect_delay: 10                       # Delay between reconnection attempts in seconds
+
+# Load Balancing Configuration (optional)
+load_balancing:
+  algorithm: "round_robin"                  # Load balancing algorithm (round_robin, least_connections, weighted, random)
+  # weights:                                # Weights for weighted load balancing
+  #   client_1: 1.0
+  #   client_2: 2.0
+  health_check_interval: 30                 # Health check interval in seconds
+  unhealthy_threshold: 3                    # Number of failed health checks before marking unhealthy
+
+# Monitoring Configuration (optional)
+monitoring:
+  enable_prometheus: true                   # Enable Prometheus metrics
+  prometheus_port: 9090                     # Prometheus metrics port
+  enable_health_checks: true                # Enable health check endpoints
+  health_check_port: 8082                   # Health check endpoint port
+  metrics_retention_days: 7                 # Metrics retention period in days
+  alert_thresholds:                         # Alert thresholds for various metrics
+    cpu_usage: 80.0                         # CPU usage threshold (%)
+    memory_usage: 85.0                      # Memory usage threshold (%)
+    error_rate: 5.0                         # Error rate threshold (%)
+    response_time: 1000.0                   # Response time threshold (ms)

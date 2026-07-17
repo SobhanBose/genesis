@@ -1,0 +1,109 @@
+.
+├── README.md
+├── __init__.py
+├── __pycache__
+│   └── w2v_model.cpython-312.pyc
+├── configs
+│   ├── data_config.yaml
+│   ├── federated_config.yaml
+│   └── model_config.yaml
+├── data
+│   ├── gene_embeddings
+│   │   ├── gene2vec_dim_200_iter_9_w2v.tsv
+│   │   └── gene2vec_dim_200_iter_9_w2v.txt:Zone.Identifier
+│   ├── processed
+│   │   ├── test.csv
+│   │   ├── train.csv
+│   │   └── validation.csv
+│   └── raw
+│       ├── orthogonal.csv
+│       ├── orthogonal.csv:Zone.Identifier
+│       ├── test.csv
+│       ├── test.csv:Zone.Identifier
+│       ├── train.csv
+│       └── train.csv:Zone.Identifier
+├── docker
+├── docs
+├── federated_data
+│   ├── iid_partition
+│   │   └── clients
+│   └── non_iid_partition
+│       ├── clients
+│       │   ├── client_0
+│       │   │   ├── test.csv
+│       │   │   └── train.csv
+│       │   └── client_1
+│       │       ├── test.csv
+│       │       └── train.csv
+│       ├── metadata.pkl
+│       ├── statistics.pkl
+│       └── validation.csv
+├── logs
+│   ├── run_20250703_093041.log
+│   ├── run_20250703_093153.log
+│   ├── run_20250703_103230.log
+│   ├── run_20250703_103318.log
+│   ├── run_20250703_103408.log
+│   ├── run_20250703_103511.log
+│   ├── run_20250703_103628.log
+│   └── run_20250703_152506.log
+├── models
+│   ├── checkpoints
+│   ├── federated_models
+│   │   ├── clients
+│   │   └── global
+│   └── global_models
+│       ├── alt_word2vec.model
+│       ├── baseline_model.pt
+│       └── ref_word2vec.model
+├── notebooks
+│   ├── baseline.ipynb
+│   ├── eda.ipynb
+│   └── model.ipynb
+├── pyproject.toml
+├── results
+│   ├── metrics
+│   ├── plots
+│   └── reports
+├── scripts
+│   ├── __pycache__
+│   │   └── create_configs.cpython-312.pyc
+│   └── create_configs.py
+├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── client
+│   │   │   └── __init__.py
+│   │   └── server
+│   │       └── __init__.py
+│   ├── data
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   └── create_federated_dataset.cpython-312.pyc
+│   │   └── create_federated_dataset.py
+│   ├── federated
+│   │   ├── __init__.py
+│   │   ├── client.py
+│   │   └── server.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── pathogenecity_model.py
+│   │   └── ref_alt_embeddings.py
+│   └── utils
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── __init__.cpython-312.pyc
+│       │   └── logger.cpython-312.pyc
+│       └── logger.py
+├── temp
+│   └── best_model.pt
+├── tests
+│   └── __init__.py
+├── tree.txt
+└── uv.lock
+
+43 directories, 64 files

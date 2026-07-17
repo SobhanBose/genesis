@@ -1,0 +1,269 @@
+# Federated Learning Client Configuration
+#
+# This configuration file contains all client-side training parameters for federated learning.
+# These parameters control local training behavior, optimization settings, and client-specific
+# configurations that affect how each client trains its local model during federated rounds.
+#
+# PARAMETER CATEGORIES:
+# - Local Training: Epochs, batch size, and training strategies
+# - Optimizer: Algorithm selection and hyperparameters
+# - Learning Rate Scheduling: Adaptive learning rate strategies
+# - Loss Functions: Loss function selection and parameters
+# - Regularization: Techniques to prevent overfitting
+# - Data Handling: Sampling and preprocessing options
+
+client:
+  # =============================================================================
+  # LOCAL TRAINING PARAMETERS
+  # =============================================================================
+  
+  # Number of local training epochs per federated round
+  # Higher values: More local training, potentially better local convergence but higher communication cost
+  # Lower values: Less local training, more frequent server updates, better global convergence
+  # Typical range: 1-50 epochs
+  local_epochs: 10
+  
+  # Batch size for local training
+  # Higher values: More stable gradients, faster training, higher memory usage
+  # Lower values: More noisy gradients, slower training, lower memory usage
+  # Should be adjusted based on available memory and dataset size
+  # Typical range: 16-512
+  batch_size: 300
+  
+  # =============================================================================
+  # OPTIMIZER CONFIGURATION
+  # =============================================================================
+  
+  optimizer:
+    # Optimizer algorithm selection
+    # Options: "adam", "adamw", "sgd"
+    # - adam: Adaptive moment estimation, good for most cases
+    # - adamw: Adam with decoupled weight decay, better generalization
+    # - sgd: Stochastic gradient descent with momentum, more stable but slower
+    name: "adam"
+    
+    # Base learning rate for local training
+    # Higher values: Faster convergence but risk of overshooting
+    # Lower values: Slower but more stable convergence
+    # Typical range: 1e-5 to 1e-2
+    learning_rate: 5e-4
+    
+    # Weight decay (L2 regularization) coefficient
+    # Higher values: Stronger regularization, prevents overfitting
+    # Lower values: Less regularization, may lead to overfitting
+    # Typical range: 1e-6 to 1e-2
+    weight_decay: 1e-3
+    
+    # Momentum factor for SGD optimizer
+    # Higher values: More momentum, smoother convergence
+    # Lower values: Less momentum, more responsive to recent gradients
+    # Only used when optimizer is "sgd"
+    # Typical range: 0.8-0.99
+    momentum: 0.9
+    
+    # Beta1 parameter for Adam/AdamW optimizers
+    # Controls exponential decay rate for first moment estimates
+    # Higher values: More smoothing of gradients
+    # Typical range: 0.8-0.95
+    beta1: 0.9
+    
+    # Beta2 parameter for Adam/AdamW optimizers
+    # Controls exponential decay rate for second moment estimates
+    # Higher values: More smoothing of squared gradients
+    # Typical range: 0.99-0.999
+    beta2: 0.999
+  
+  # =============================================================================
+  # LEARNING RATE SCHEDULING
+  # =============================================================================
+  
+  lr_scheduler:
+    # Learning rate scheduler type
+    # Options: "reduce_on_plateau", "cosine_annealing", "step", "exponential"
+    # - reduce_on_plateau: Reduces LR when validation loss plateaus
+    # - cosine_annealing: Cosine decay schedule
+    # - step: Step-wise decay at fixed intervals
+    # - exponential: Exponential decay
+    name: "reduce_on_plateau"
+    
+    # ReduceLROnPlateau specific parameters
+    # Number of epochs with no improvement after which LR will be reduced
+    # Higher values: More patience, less frequent LR reductions
+    # Lower values: Less patience, more frequent LR reductions
+    patience: 3
+    
+    # Factor by which the learning rate will be reduced (new_lr = lr * factor)
+    # Lower values: More aggressive LR reduction
+    # Higher values: More conservative LR reduction
+    # Typical range: 0.1-0.8
+    factor: 0.5
+    
+    # Lower bound on the learning rate
+    # Prevents LR from becoming too small
+    min_lr: 1e-6
+    
+    # Threshold for measuring the new optimum
+    # Smaller values: More sensitive to small improvements
+    # Larger values: Less sensitive, requires larger improvements
+    threshold: 1e-4
+    
+    # CosineAnnealingLR specific parameters
+    # Maximum number of iterations for cosine annealing
+    # Should match or exceed total training epochs
+    cosine_t_max: 50
+    
+    # StepLR specific parameters
+    # Period of learning rate decay (epochs)
+    # LR is multiplied by gamma every step_size epochs
+    step_size: 30
+    
+    # Multiplicative factor for step decay
+    # Typical range: 0.1-0.5
+    step_gamma: 0.1
+    
+    # ExponentialLR specific parameters
+    # Multiplicative factor for exponential decay
+    # Applied every epoch: new_lr = lr * gamma
+    # Typical range: 0.9-0.99
+    exponential_gamma: 0.95
+  
+  # =============================================================================
+  # LOSS FUNCTION CONFIGURATION
+  # =============================================================================
+  
+  loss:
+    # Loss function selection
+    # Options: "cross_entropy", "focal", "label_smoothing"
+    # - cross_entropy: Standard cross-entropy loss
+    # - focal: Focal loss for handling class imbalance
+    # - label_smoothing: Cross-entropy with label smoothing
+    name: "cross_entropy"
+    
+    # Focal loss specific parameters
+    # Alpha parameter for focal loss (class weighting)
+    # Higher values: More weight on hard examples
+    # Typical range: 0.25-2.0
+    focal_alpha: 1.0
+    
+    # Gamma parameter for focal loss (focusing parameter)
+    # Higher values: More focus on hard examples
+    # Typical range: 1.0-5.0
+    focal_gamma: 2.0
+    
+    # Label smoothing parameter
+    # Amount of smoothing applied to target labels
+    # Higher values: More smoothing, less confident predictions
+    # Typical range: 0.0-0.3
+    label_smoothing: 0.1
+  
+  # =============================================================================
+  # REGULARIZATION AND TRAINING STRATEGIES
+  # =============================================================================
+  
+  training:
+    # Use weighted random sampler to handle class imbalance
+    # true: Balances classes by sampling, improves minority class performance
+    # false: Uses standard random sampling, may favor majority class
+    use_weighted_sampler: true
+    
+    # Enable gradient clipping to prevent exploding gradients
+    # true: Clips gradients to max_grad_norm, improves training stability
+    # false: No gradient clipping, may lead to unstable training
+    gradient_clipping: true
+    
+    # Maximum gradient norm for clipping
+    # Lower values: More aggressive clipping, more stable but slower convergence
+    # Higher values: Less aggressive clipping, faster but potentially unstable
+    # Typical range: 0.5-5.0
+    max_grad_norm: 1.0
+    
+    # Enable early stopping based on validation loss
+    # true: Stops training when validation loss stops improving
+    # false: Trains for full number of epochs regardless of validation loss
+    early_stopping: true
+    
+    # Number of epochs with no improvement before early stopping
+    # Higher values: More patience, longer training
+    # Lower values: Less patience, shorter training
+    # Typical range: 5-50
+    patience: 20
+    
+    # Minimum change in validation loss to qualify as an improvement
+    # Smaller values: More sensitive to small improvements
+    # Larger values: Requires larger improvements to continue training
+    min_delta: 1e-4
+  
+  # =============================================================================
+  # ADVANCED TRAINING OPTIONS
+  # =============================================================================
+  
+  advanced:
+    # Maximum number of local epochs (safety limit)
+    # Prevents excessive local training that could hurt federated performance
+    max_epochs: 100
+    
+    # Validation split for early stopping
+    # Fraction of training data to use for validation during local training
+    # Higher values: More data for validation, less for training
+    # Lower values: More data for training, less reliable validation
+    # Set to 0.0 to use separate test data for validation
+    validation_split: 0.0
+    
+    # Shuffle training data each epoch
+    # true: Randomizes data order, improves generalization
+    # false: Fixed data order, more reproducible but potentially worse performance
+    shuffle_data: true
+    
+    # Number of workers for data loading
+    # Higher values: Faster data loading, higher memory usage
+    # Lower values: Slower data loading, lower memory usage
+    # Set to 0 for single-threaded loading
+    num_workers: 0
+    
+    # Pin memory for faster GPU transfer
+    # true: Faster GPU transfer, higher memory usage
+    # false: Slower GPU transfer, lower memory usage
+    # Only relevant when using GPU
+    pin_memory: false
+
+# =============================================================================
+# DATA CONFIGURATION
+# =============================================================================
+
+data:
+  # Base directory for client data
+  # Each client's data will be loaded from: {client_data_dir}/client_{client_id}/
+  # Should contain train.csv and test.csv files for each client
+  # Default: "federated_data/non_iid_partition/clients"
+  client_data_dir: "federated_data/non_iid_partition/clients"
+
+# =============================================================================
+# CONFIGURATION NOTES
+# =============================================================================
+#
+# PERFORMANCE TUNING:
+# - Increase batch_size for faster training (if memory allows)
+# - Increase local_epochs for better local convergence
+# - Use "adamw" optimizer for better generalization
+# - Enable gradient_clipping for training stability
+#
+# MEMORY OPTIMIZATION:
+# - Decrease batch_size if running out of memory
+# - Set num_workers to 0 if memory is limited
+# - Disable pin_memory if memory is constrained
+#
+# CONVERGENCE ISSUES:
+# - Decrease learning_rate if training is unstable
+# - Increase patience for early stopping if training stops too early
+# - Try different lr_scheduler if convergence is slow
+# - Adjust weight_decay if overfitting/underfitting occurs
+#
+# CLASS IMBALANCE:
+# - Enable use_weighted_sampler for imbalanced datasets
+# - Use focal loss for severe class imbalance
+# - Adjust focal_alpha and focal_gamma parameters
+#
+# FEDERATED LEARNING SPECIFIC:
+# - Balance local_epochs vs communication frequency
+# - Higher local_epochs = less communication but potential drift
+# - Lower local_epochs = more communication but better global convergence

@@ -1,0 +1,69 @@
+# Federated Learning Strategy Configuration Examples
+# 
+# This file contains example configurations for different federated learning scenarios.
+# Copy the relevant sections to your federated_config.yaml file.
+
+# =============================================================================
+# EXAMPLE 1: FEDADAM STRATEGY
+# =============================================================================
+# Use case: Fast convergence with server-side adaptive optimization
+
+fedadam_example:
+  federated:
+    strategy: "FedAdam"
+    
+    strategies:
+      fedadam:
+        beta1: 0.9          # First moment decay rate
+        beta2: 0.999        # Second moment decay rate
+        server_lr: 0.001    # Server learning rate
+        epsilon: 1e-7       # Numerical stability parameter
+    
+    server:
+      rounds: 50
+      min_fit_clients: 3
+      fraction_fit: 1.0
+    
+    client:
+      local_epochs: 5
+
+# =============================================================================
+# EXAMPLE 2: FEDPROX STRATEGY
+# =============================================================================
+# Use case: Heterogeneous data with proximal regularization
+
+fedprox_example:
+  federated:
+    strategy: "FedProx"
+    
+    strategies:
+      fedprox:
+        proximal_mu: 0.075  # Proximal term weight
+    
+    server:
+      rounds: 50
+      min_fit_clients: 3
+      fraction_fit: 1.0
+    
+    client:
+      local_epochs: 5
+
+# =============================================================================
+# EXAMPLE 3: FEDAVG STRATEGY
+# =============================================================================
+# Use case: Standard federated averaging baseline
+
+fedavg_example:
+  federated:
+    strategy: "FedAvg"
+    
+    strategies:
+      fedavg: {}            # No additional parameters needed
+    
+    server:
+      rounds: 50
+      min_fit_clients: 3
+      fraction_fit: 1.0
+    
+    client:
+      local_epochs: 5

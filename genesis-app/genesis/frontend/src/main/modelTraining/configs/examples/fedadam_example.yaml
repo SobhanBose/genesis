@@ -1,0 +1,105 @@
+# FedAdam Strategy Configuration Example
+#
+# FedAdam applies server-side adaptive optimization using the Adam algorithm
+# for federated learning, providing momentum and adaptive learning rates.
+#
+# Best for:
+# - Fast convergence requirements
+# - Complex optimization landscapes
+# - Scenarios where client-side optimization is limited
+#
+# Advantages:
+# - Faster convergence than FedAvg/FedProx
+# - Adaptive learning rates
+# - Momentum-based updates
+# - Good performance on heterogeneous data
+#
+# Disadvantages:
+# - Higher memory usage (stores momentum and variance)
+# - More hyperparameters to tune
+# - Potential for numerical instability
+
+federated:
+  # Strategy selection (required)
+  strategy: "FedAdam"
+  
+  # Strategy-specific configuration
+  strategies:
+    fedadam:
+      # First moment decay rate (momentum parameter)
+      # Controls how much of the previous gradient momentum to retain
+      # Recommended range: [0.8, 0.95]
+      # Higher values = more momentum = smoother updates
+      # Lower values = more responsive to recent gradients
+      beta1: 0.9
+      
+      # Second moment decay rate (variance parameter)
+      # Controls how much of the previous gradient variance to retain
+      # Recommended range: [0.99, 0.9999]
+      # Higher values = more stable variance estimation
+      # Lower values = more responsive to recent gradient magnitudes
+      beta2: 0.999
+      
+      # Server learning rate
+      # Learning rate applied to the aggregated updates on the server
+      # Recommended range: [1e-4, 1e-2]
+      # Higher values = faster convergence but potential instability
+      # Lower values = more stable but slower convergence
+      server_lr: 0.001
+      
+      # Numerical stability parameter
+      # Small constant added to denominator to prevent division by zero
+      # Recommended range: [1e-8, 1e-6]
+      # Smaller values = more precise but potential numerical issues
+      # Larger values = more stable but less precise
+      epsilon: 1e-7
+  
+  # Server configuration
+  server:
+    rounds: 50                    # Number of federated learning rounds
+    min_fit_clients: 3            # Minimum clients required for training
+    min_available_clients: 3      # Minimum clients that must be available
+    fraction_fit: 1.0             # Fraction of clients to use for training
+    fraction_evaluate: 1.0        # Fraction of clients to use for evaluation
+    
+  # Client configuration
+  client:
+    local_epochs: 5               # Number of local training epochs per round
+    
+  # Evaluation configuration
+  evaluation:
+    centralized_evaluation: true  # Enable server-side evaluation on validation set
+
+# Recommended client-side parameters (set in model_config.yaml):
+# training:
+#   learning_rate: 0.001         # Client learning rate (can be higher with FedAdam)
+#   batch_size: 32               # Batch size for local training
+#   optimizer: "adam"            # Optimizer for local training
+#   weight_decay: 1e-4           # L2 regularization
+#   max_grad_norm: 1.0           # Gradient clipping (important for FedAdam)
+
+# Performance tuning tips for FedAdam:
+# 1. For faster convergence: Increase server_lr (1e-2), decrease beta1 (0.8)
+# 2. For more stability: Decrease server_lr (1e-4), increase beta2 (0.9999)
+# 3. For numerical issues: Increase epsilon (1e-6 to 1e-4)
+# 4. For oscillating loss: Reduce server_lr and increase beta2
+# 5. For slow convergence: Increase server_lr and reduce beta1
+
+# Parameter combinations by scenario:
+# Fast convergence (aggressive):
+#   beta1: 0.8, beta2: 0.999, server_lr: 1e-2, epsilon: 1e-7
+#
+# Balanced performance (recommended):
+#   beta1: 0.9, beta2: 0.999, server_lr: 1e-3, epsilon: 1e-7
+#
+# Stable training (conservative):
+#   beta1: 0.95, beta2: 0.9999, server_lr: 1e-4, epsilon: 1e-6
+#
+# Heterogeneous data:
+#   beta1: 0.9, beta2: 0.999, server_lr: 5e-4, epsilon: 1e-7
+
+# Common issues and solutions:
+# - NaN values: Reduce server_lr, increase epsilon, add gradient clipping
+# - Slow convergence: Increase server_lr, reduce beta1
+# - Oscillating loss: Reduce server_lr, increase beta2
+# - Memory issues: Consider using FedProx instead for lower memory usage
