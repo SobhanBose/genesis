@@ -1,0 +1,28 @@
+2026-07-12 14:00:05 UTC - INFO - [RUN:run_20260712_140005_cedf] - Initializing simplified federated server
+2026-07-12 14:00:05 UTC - INFO - [RUN:run_20260712_140005_cedf] - Using device: cpu
+2026-07-12 14:00:05 UTC - INFO - [RUN:run_20260712_140005_cedf] - Loaded validation data: 13383 samples
+2026-07-12 14:00:05 UTC - INFO - [RUN:run_20260712_140005_cedf] - Preprocessing components initialized
+2026-07-12 14:00:05 UTC - INFO - [RUN:run_20260712_140005_cedf] - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Simplified federated server initialized successfully
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Creating FedAdam strategy with server-initialized parameters
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Server parameter initialization: All clients will receive identical starting parameters
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - FedAdam: Extracting initial parameters from server model (beta_1=0.9, beta_2=0.999, eta=0.01)
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Extracting parameters from model with 37 layers
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Parameter extraction statistics: 37 layers, 267687 total parameters
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Parameter data types: float32, int64
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Parameter shapes: (512, 173), (512,), (512,), (512,), (512,) ... (32 more)
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Successfully extracted and validated 37 parameter tensors (267687 total parameters) from server model
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - FedAdam strategy initialized with server parameter initialization and Adam parameters (beta_1=0.9, beta_2=0.999, eta=0.01, tau=1e-06)
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Successfully created FedAdam strategy with server parameter initialization
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Strategy instance created: SimpleFedAdamStrategy
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Instantiated FedAdam parameters - beta1: 0.9, beta2: 0.999, eta: 0.01, tau: 1e-06
+2026-07-12 14:00:06 UTC - INFO - [RUN:run_20260712_140005_cedf] - Centralized evaluation (Round 0): Loss=8.8072, Accuracy=0.2901
+2026-07-12 14:00:15 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 1: Sampled 1 clients out of 1 available clients (fraction_fit=1.00)
+2026-07-12 14:00:15 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 1: Sampled clients: ['3219589ef1bf4fd9ba1ffad939b4063d']
+2026-07-12 14:02:27 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 1: Aggregated client training metrics - loss: 2.3960, epochs_trained: 10.0000, final_val_loss: 0.6131, final_learning_rate: 0.0001
+2026-07-12 14:02:27 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 1: Aggregated client training metrics - loss: 2.3960, epochs_trained: 10.0000, final_val_loss: 0.6131, final_learning_rate: 0.0001
+2026-07-12 14:02:27 UTC - INFO - [RUN:run_20260712_140005_cedf] - Centralized evaluation (Round 1): Loss=77.6724, Accuracy=0.1117
+2026-07-12 14:02:27 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 1: Configured evaluation for 1 clients out of 1 available
+2026-07-12 14:02:30 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 1: Aggregated client evaluation metrics - loss: 22.8158, accuracy: 0.4441
+2026-07-12 14:02:30 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 2: Sampled 1 clients out of 1 available clients (fraction_fit=1.00)
+2026-07-12 14:02:30 UTC - INFO - [RUN:run_20260712_140005_cedf] - Round 2: Sampled clients: ['3219589ef1bf4fd9ba1ffad939b4063d']

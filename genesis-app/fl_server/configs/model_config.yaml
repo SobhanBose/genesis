@@ -1,0 +1,696 @@
+# =============================================================================
+# MODEL ARCHITECTURE CONFIGURATION
+# =============================================================================
+#
+# This configuration file defines model architecture parameters, model-specific
+# settings, and model evaluation configurations. Training parameters (optimizer,
+# learning rate, etc.) are now handled in client_config.yaml for federated learning.
+#
+# CONFIGURATION STRUCTURE:
+# - model: Basic model information and type selection
+# - architecture: Model architecture definitions for different model types
+# - regularization: Model-specific regularization techniques
+# - embeddings: Embedding layer configurations
+# - evaluation: Model evaluation and validation settings
+# - checkpointing: Model saving and loading configurations
+#
+# =============================================================================
+
+model:
+  # ==========================================================================
+  # BASIC MODEL INFORMATION
+  # ==========================================================================
+  
+  # Human-readable name for the model
+  # Used in logging, model saving, and result reporting
+  name: "PathogenicityPredictor"
+  
+  # Model category/type for organizational purposes
+  # Options: "deep_learning", "ensemble", "traditional_ml"
+  type: "deep_learning"
+  
+  # Model version for tracking and reproducibility
+  # Increment when making significant architectural changes
+  version: "1.0"
+  
+  # Brief description of the model's purpose
+  description: "Deep learning model for predicting genetic variant pathogenicity in federated learning setting"
+
+# =============================================================================
+# MODEL ARCHITECTURE CONFIGURATION
+# =============================================================================
+
+architecture:
+  # ==========================================================================
+  # MODEL TYPE SELECTION
+  # ==========================================================================
+  
+  # Primary model architecture to use
+  # Options: "basic", "improved", "lightweight", "ensemble"
+  # - basic: Simple feedforward network with standard layers
+  # - improved: Advanced architecture with attention and residual connections
+  # - lightweight: Optimized for resource-constrained environments
+  # - ensemble: Multiple models combined for better performance
+  model_type: "lightweight"
+  
+  # ==========================================================================
+  # INPUT/OUTPUT DIMENSIONS
+  # ==========================================================================
+  
+  # Input feature dimension
+  # Set to null to automatically determine from data
+  # Override with specific value if known in advance
+  input_dim: null
+  
+  # Output dimension for classification
+  # 2 for binary classification, N for N-class classification
+  output_dim: 2
+  
+  # ==========================================================================
+  # SHARED ARCHITECTURE PARAMETERS
+  # ==========================================================================
+  
+  # Default hidden layer dimensions (fallback for all model types)
+  # Used when model-specific dimensions are not specified
+  # Larger dimensions: More model capacity but higher computational cost
+  # Smaller dimensions: Faster training but potentially lower performance
+  hidden_dims: [512, 256, 128, 64]
+  
+  # Default dropout rate for regularization
+  # Higher values: Stronger regularization, may prevent overfitting
+  # Lower values: Less regularization, may lead to overfitting
+  # Range: 0.0-0.9, commonly 0.1-0.5
+  dropout: 0.3
+  
+  # ==========================================================================
+  # BASIC MODEL ARCHITECTURE
+  # ==========================================================================
+  
+  basic_model:
+    # Layer dimensions for basic feedforward network
+    # Each value represents the number of neurons in that layer
+    # Network depth affects model capacity and training time
+    hidden_layers: [512, 256, 64, 32, 16]
+    
+    # Dropout rate specific to basic model
+    # Can be different from global dropout for model-specific tuning
+    dropout: 0.3
+    
+    # Activation function for hidden layers
+    # Options: "relu", "leaky_relu", "gelu", "swish", "tanh"
+    # - relu: Standard, fast, good for most cases
+    # - leaky_relu: Prevents dying ReLU problem
+    # - gelu: Smooth, good for transformer-like architectures
+    # - swish: Self-gated, often performs well
+    activation: "relu"
+    
+    # Use batch normalization between layers
+    # true: Improves training stability and convergence
+    # false: Simpler architecture, may be less stable
+    use_batch_norm: true
+    
+    # Use layer normalization instead of batch normalization
+    # true: Better for small batch sizes and federated learning
+    # false: Uses batch normalization or no normalization
+    use_layer_norm: false
+  
+  # ==========================================================================
+  # IMPROVED MODEL ARCHITECTURE
+  # ==========================================================================
+  
+  improved_model:
+    # Enable multi-head attention mechanism
+    # true: Adds attention layers for better feature interaction
+    # false: Uses standard feedforward layers only
+    use_attention: true
+    
+    # Number of attention heads for multi-head attention
+    # More heads: Better representation learning but higher computation
+    # Typical range: 4-16, must divide embedding dimension evenly
+    attention_heads: 8
+    
+    # Enable residual connections (skip connections)
+    # true: Helps with gradient flow and training deeper networks
+    # false: Standard feedforward connections only
+    use_residual: true
+    
+    # Dimension for feature extraction layer
+    # Controls the bottleneck dimension in attention mechanisms
+    # Should be divisible by attention_heads
+    feature_extraction_dim: 128
+    
+    # Hidden layer dimensions specific to improved model
+    # Can be deeper than basic model due to residual connections
+    hidden_dims: [512, 256, 128, 64, 32]
+    
+    # Dropout rate for improved model
+    # Can be higher due to more complex architecture
+    dropout: 0.5
+    
+    # Activation function for improved model
+    # GELU or Swish often work better with attention mechanisms
+    activation: "gelu"
+    
+    # Use layer normalization (recommended for attention-based models)
+    use_layer_norm: true
+    
+    # Enable positional encoding for sequence-like data
+    # true: Adds positional information to input features
+    # false: Treats input as unordered feature vector
+    use_positional_encoding: false
+  
+  # ==========================================================================
+  # LIGHTWEIGHT MODEL ARCHITECTURE
+  # ==========================================================================
+  
+  lightweight_model:
+    # Optimized hidden dimensions for resource efficiency
+    # Balanced between performance and computational requirements
+    hidden_dims: [512, 256, 128, 64, 32]
+    
+    # Higher dropout for lightweight model to prevent overfitting
+    # Lightweight models may overfit more easily
+    dropout: 0.6
+    
+    # Activation function optimized for efficiency
+    # ReLU is computationally efficient
+    activation: "relu"
+    
+    # Use depthwise separable convolutions for efficiency
+    # true: Reduces parameters and computation for convolutional layers
+    # false: Uses standard convolutions
+    use_separable_conv: false
+    
+    # Enable model pruning during training
+    # true: Removes less important connections for efficiency
+    # false: Keeps full model architecture
+    enable_pruning: false
+    
+    # Pruning sparsity level (fraction of weights to remove)
+    # Higher values: More aggressive pruning, smaller model
+    # Range: 0.0-0.9, commonly 0.1-0.5
+    pruning_sparsity: 0.3
+  
+  # ==========================================================================
+  # ENSEMBLE MODEL ARCHITECTURE
+  # ==========================================================================
+  
+  ensemble_model:
+    # Number of individual models in the ensemble
+    # More models: Better performance but higher computational cost
+    # Typical range: 3-10
+    num_models: 5
+    
+    # Type of individual ensemble members
+    # Options: "improved", "lightweight", "basic", "mixed"
+    # - improved: All members use improved architecture
+    # - lightweight: All members use lightweight architecture
+    # - basic: All members use basic architecture
+    # - mixed: Different members use different architectures
+    ensemble_member_type: "improved"
+    
+    # Whether ensemble combination weights are learnable
+    # true: Learns optimal combination weights during training
+    # false: Uses equal weights or predefined weights
+    ensemble_weights_learnable: true
+    
+    # Ensemble combination method
+    # Options: "weighted_average", "voting", "stacking", "attention"
+    # - weighted_average: Weighted combination of predictions
+    # - voting: Majority voting for classification
+    # - stacking: Meta-learner combines predictions
+    # - attention: Attention-based combination
+    combination_method: "weighted_average"
+    
+    # Individual model configurations for ensemble members
+    improved_member_settings:
+      # Different architectures for diversity
+      hidden_dims:
+        - [512, 256, 128, 64, 32]
+        - [256, 128, 64, 32, 16]
+        - [512, 256, 128, 16, 32]
+        - [256, 256, 128, 32, 16]
+        - [512, 256, 64, 32, 8]
+      dropout: 0.4
+      use_attention: true
+      attention_heads: 8
+      activation: "gelu"
+    
+    lightweight_member_settings:
+      # Varied architectures for ensemble diversity
+      hidden_dims:
+        - [512, 256, 128, 64, 32]
+        - [512, 256, 128, 64, 16]
+        - [1024, 512, 256, 128, 64, 32]
+        - [512, 256, 256, 64, 32]
+        - [512, 128, 64, 32, 8]
+      dropout: 0.6
+      use_attention: false
+      activation: "relu"
+
+# =============================================================================
+# MODEL-SPECIFIC REGULARIZATION
+# =============================================================================
+
+regularization:
+  # ==========================================================================
+  # ARCHITECTURAL REGULARIZATION
+  # ==========================================================================
+  
+  # Enable dropout scheduling (varying dropout rate during training)
+  # true: Starts with higher dropout and reduces over time
+  # false: Uses fixed dropout rate throughout training
+  dropout_schedule: false
+  
+  # Initial dropout rate for scheduling
+  # Used when dropout_schedule is true
+  initial_dropout: 0.5
+  
+  # Final dropout rate for scheduling
+  # Used when dropout_schedule is true
+  final_dropout: 0.2
+  
+  # Enable spectral normalization for training stability
+  # true: Normalizes weight matrices to control Lipschitz constant
+  # false: Uses standard weight initialization and updates
+  spectral_normalization: false
+  
+  # ==========================================================================
+  # ENSEMBLE-SPECIFIC REGULARIZATION
+  # ==========================================================================
+  
+  ensemble_regularization:
+    # Weight for diversity loss in ensemble training
+    # Encourages ensemble members to make different predictions
+    # Higher values: More diversity but potentially lower individual performance
+    # Range: 0.0-1.0, commonly 0.01-0.1
+    diversity_loss_weight: 0.1
+    
+    # Use different dropout rates for ensemble members
+    # true: Each member uses slightly different dropout for diversity
+    # false: All members use the same dropout rate
+    dropout_variation: true
+    
+    # Range of dropout variation for ensemble members
+    # Members will use dropout rates within this range around base dropout
+    dropout_variation_range: 0.1
+    
+    # Enable orthogonal regularization for ensemble weights
+    # true: Encourages ensemble members to learn orthogonal representations
+    # false: No orthogonal constraint on ensemble weights
+    orthogonal_regularization: false
+    
+    # Weight for orthogonal regularization loss
+    orthogonal_reg_weight: 0.01
+
+# =============================================================================
+# FEATURE ENGINEERING CONFIGURATION
+# =============================================================================
+
+feature_engineering:
+  # ==========================================================================
+  # FEATURE ENGINEERING CONTROL
+  # ==========================================================================
+  
+  # Enable comprehensive feature engineering pipeline
+  # true: Applies all enabled feature engineering techniques
+  # false: Uses raw features with minimal preprocessing
+  enabled: true
+  
+  # ==========================================================================
+  # SEQUENCE-BASED FEATURES
+  # ==========================================================================
+  
+  # Enable sequence-based feature extraction
+  # true: Extracts features from reference and alternate sequences
+  # false: Uses sequences only for embedding generation
+  sequence_features: true
+  
+  # ==========================================================================
+  # CONSERVATION FEATURES
+  # ==========================================================================
+  
+  # Enable evolutionary conservation features
+  # true: Includes conservation scores and phylogenetic features
+  # false: Excludes conservation-based features
+  conservation_features: true
+  
+  # ==========================================================================
+  # FUNCTIONAL ANNOTATION FEATURES
+  # ==========================================================================
+  
+  # Enable functional annotation features
+  # true: Includes protein function and domain information
+  # false: Excludes functional annotation features
+  functional_features: true
+  
+  # ==========================================================================
+  # POPULATION GENETICS FEATURES
+  # ==========================================================================
+  
+  # Enable population genetics features
+  # true: Includes allele frequencies and population-specific information
+  # false: Excludes population genetics features
+  population_features: true
+  
+  # ==========================================================================
+  # INTERACTION FEATURES
+  # ==========================================================================
+  
+  # Enable feature interaction terms
+  # true: Creates polynomial and interaction features
+  # false: Uses only original features
+  interaction_features: true
+  
+  # ==========================================================================
+  # GENE EMBEDDING FEATURES
+  # ==========================================================================
+  
+  # Use neural network embedding for gene column
+  # true: Learns gene embeddings during training
+  # false: Uses one-hot encoding or label encoding for genes
+  use_gene_embedding: false
+  
+  # ==========================================================================
+  # FEATURE SELECTION
+  # ==========================================================================
+  
+  # Enable automatic feature selection
+  # true: Selects most informative features using specified method
+  # false: Uses all engineered features
+  feature_selection_enabled: false
+  
+  # Method for feature selection
+  # Options: "mutual_info", "f_classif", "random_forest", "lasso", "chi2"
+  # - mutual_info: Mutual information between features and target
+  # - f_classif: ANOVA F-test for classification
+  # - random_forest: Feature importance from random forest
+  # - lasso: L1 regularization for feature selection
+  # - chi2: Chi-squared test for categorical features
+  feature_selection_method: "mutual_info"
+  
+  # Number of top features to select
+  # Used when feature_selection_enabled is true
+  # Set to null to use automatic selection based on scores
+  n_features: 100
+  
+  # ==========================================================================
+  # DIMENSIONALITY REDUCTION
+  # ==========================================================================
+  
+  # Enable Principal Component Analysis (PCA)
+  # true: Applies PCA for dimensionality reduction
+  # false: Uses original feature space
+  use_pca: false
+  
+  # Number of principal components to retain
+  # Used when use_pca is true
+  # Set to null to retain components explaining 95% of variance
+  pca_components: 50
+  
+  # ==========================================================================
+  # FEATURE SCALING
+  # ==========================================================================
+  
+  # Method for feature scaling/normalization
+  # Options: "standard", "robust", "minmax", "quantile", "none"
+  # - standard: Zero mean, unit variance (StandardScaler)
+  # - robust: Median and IQR-based scaling (RobustScaler)
+  # - minmax: Scale to [0,1] range (MinMaxScaler)
+  # - quantile: Uniform distribution transformation (QuantileTransformer)
+  # - none: No scaling applied
+  scaling_method: "standard"
+
+# =============================================================================
+# EMBEDDING CONFIGURATIONS
+# =============================================================================
+
+embeddings:
+  # ==========================================================================
+  # SEQUENCE EMBEDDINGS
+  # ==========================================================================
+  
+  # Word2Vec-style embeddings for sequence features
+  # Vector size for sequence embeddings
+  # Higher values: More expressive but computationally expensive
+  # Typical range: 50-300
+  vector_size: 50
+  
+  # Context window size for sequence embeddings
+  # Larger windows capture longer-range dependencies
+  # Typical range: 3-10
+  window_size: 3
+  
+  # Minimum count for including tokens in vocabulary
+  # Higher values: Smaller vocabulary, less noise
+  # Lower values: Larger vocabulary, more coverage
+  min_count: 1
+  
+  # K-mer size for sequence tokenization
+  # Larger k-mers: More specific patterns but sparser representation
+  # Typical range: 3-6 for DNA sequences
+  k_mer_size: 3
+  
+  # ==========================================================================
+  # ADVANCED EMBEDDING TECHNIQUES
+  # ==========================================================================
+  
+  # Enable multi-scale embeddings using different k-mer sizes
+  # true: Uses multiple k-mer sizes for richer representation
+  # false: Uses single k-mer size specified above
+  multi_scale_embeddings: false
+  
+  # List of k-mer sizes for multi-scale embeddings
+  # Used when multi_scale_embeddings is true
+  k_mer_sizes: [3, 4, 5]
+  
+  # Embedding dimension for learned embeddings
+  # Used for trainable embedding layers
+  # Should be divisible by attention heads if using attention
+  embedding_dim: 128
+  
+  # Enable contextual embeddings (transformer-based)
+  # true: Uses transformer-style contextual embeddings
+  # false: Uses static embeddings
+  contextual_embeddings: false
+  
+  # Number of transformer layers for contextual embeddings
+  # More layers: Better context modeling but higher computation
+  num_transformer_layers: 2
+  
+  # Number of attention heads in transformer embeddings
+  # Should divide embedding_dim evenly
+  transformer_attention_heads: 8
+
+# =============================================================================
+# MODEL EVALUATION CONFIGURATION
+# =============================================================================
+
+evaluation:
+  # ==========================================================================
+  # EVALUATION METRICS
+  # ==========================================================================
+  
+  # List of metrics to compute during evaluation
+  # Options: "accuracy", "roc_auc", "precision", "recall", "f1", "mcc", "specificity"
+  # - accuracy: Overall classification accuracy
+  # - roc_auc: Area under ROC curve
+  # - precision: Positive predictive value
+  # - recall: Sensitivity/true positive rate
+  # - f1: Harmonic mean of precision and recall
+  # - mcc: Matthews correlation coefficient
+  # - specificity: True negative rate
+  metrics: ["accuracy", "roc_auc", "precision", "recall", "f1", "mcc"]
+  
+  # ==========================================================================
+  # CROSS-VALIDATION SETTINGS
+  # ==========================================================================
+  
+  # Enable k-fold cross-validation for model evaluation
+  # true: Performs k-fold CV for robust performance estimation
+  # false: Uses simple train/validation split
+  use_cross_validation: true
+  
+  # Number of folds for k-fold cross-validation
+  # Higher values: More robust estimates but longer evaluation time
+  # Typical range: 3-10
+  cv_folds: 5
+  
+  # Random state for reproducible fold splits
+  # Use same value across experiments for fair comparison
+  cv_random_state: 42
+  
+  # Stratified cross-validation for imbalanced datasets
+  # true: Maintains class distribution in each fold
+  # false: Random splitting without considering class balance
+  stratified_cv: true
+  
+  # ==========================================================================
+  # MODEL COMPARISON AND BENCHMARKING
+  # ==========================================================================
+  
+  # Enable comparison with baseline models
+  # true: Trains and evaluates multiple model types for comparison
+  # false: Only evaluates the selected model type
+  compare_models: false
+  
+  # List of baseline models to compare against
+  # Used when compare_models is true
+  baseline_models: ["basic", "improved", "lightweight"]
+  
+  # Enable statistical significance testing
+  # true: Performs statistical tests to compare model performance
+  # false: Only reports raw performance metrics
+  statistical_testing: false
+  
+  # Confidence level for statistical tests
+  # Range: 0.0-1.0, commonly 0.95 or 0.99
+  confidence_level: 0.95
+
+# =============================================================================
+# MODEL CHECKPOINTING AND PERSISTENCE
+# =============================================================================
+
+checkpointing:
+  # ==========================================================================
+  # MODEL SAVING CONFIGURATION
+  # ==========================================================================
+  
+  # Enable automatic model checkpointing during training
+  # true: Saves model at specified intervals
+  # false: Only saves final model
+  save_checkpoints: true
+  
+  # Directory to save model checkpoints
+  # Relative path from project root
+  checkpoint_dir: "models/checkpoints"
+  
+  # Frequency of checkpoint saving (in epochs)
+  # Save model every N epochs, 0 = save only best model
+  checkpoint_frequency: 10
+  
+  # Save only the best model based on validation metric
+  # true: Overwrites checkpoint only when validation improves
+  # false: Saves checkpoint at every specified frequency
+  save_best_only: true
+  
+  # Metric to use for determining "best" model
+  # Should be one of the metrics specified in evaluation.metrics
+  best_metric: "roc_auc"
+  
+  # Whether higher values of the metric are better
+  # true: Higher metric values indicate better performance
+  # false: Lower metric values indicate better performance
+  metric_higher_better: true
+  
+  # ==========================================================================
+  # MODEL LOADING AND RESUMING
+  # ==========================================================================
+  
+  # Enable automatic resuming from latest checkpoint
+  # true: Automatically loads and resumes from latest checkpoint
+  # false: Starts training from scratch
+  auto_resume: false
+  
+  # Path to specific checkpoint to load
+  # Set to null to use latest checkpoint or start from scratch
+  resume_from_checkpoint: null
+  
+  # Load only model weights (not optimizer state)
+  # true: Loads only model parameters, resets optimizer
+  # false: Loads complete training state including optimizer
+  load_weights_only: false
+
+# =============================================================================
+# LOGGING AND MONITORING
+# =============================================================================
+
+logging:
+  # ==========================================================================
+  # TRAINING HISTORY AND METRICS
+  # ==========================================================================
+  
+  # Save detailed training history
+  # true: Saves loss and metrics for each epoch
+  # false: Only saves final results
+  save_training_history: true
+  
+  # Save feature importance analysis
+  # true: Computes and saves feature importance scores
+  # false: Skips feature importance analysis
+  save_feature_importance: true
+  
+  # Method for computing feature importance
+  # Options: "permutation", "gradient", "integrated_gradients", "shap"
+  # - permutation: Permutation-based importance
+  # - gradient: Gradient-based importance
+  # - integrated_gradients: Integrated gradients method
+  # - shap: SHAP (SHapley Additive exPlanations) values
+  feature_importance_method: "permutation"
+  
+  # ==========================================================================
+  # VISUALIZATION AND PLOTTING
+  # ==========================================================================
+  
+  # Generate and save training curve plots
+  # true: Creates loss and metric plots over training epochs
+  # false: No training visualization
+  plot_training_curves: true
+  
+  # Generate and save feature importance plots
+  # true: Creates bar plots of feature importance scores
+  # false: No feature importance visualization
+  plot_feature_importance: true
+  
+  # Generate and save confusion matrix plots
+  # true: Creates confusion matrix heatmaps for classification
+  # false: No confusion matrix visualization
+  plot_confusion_matrix: true
+  
+  # Generate and save ROC curves
+  # true: Creates ROC curve plots for binary classification
+  # false: No ROC curve visualization
+  plot_roc_curves: true
+  
+  # Directory to save plots and visualizations
+  plots_dir: "results/plots"
+  
+  # Image format for saved plots
+  # Options: "png", "pdf", "svg", "jpg"
+  plot_format: "png"
+  
+  # DPI (dots per inch) for saved plots
+  # Higher values: Better quality but larger file sizes
+  plot_dpi: 300
+
+# =============================================================================
+# CONFIGURATION VALIDATION NOTES
+# =============================================================================
+#
+# The following constraints are automatically validated:
+# - model_type must be one of the supported types
+# - output_dim > 0
+# - All hidden dimensions > 0
+# - 0.0 <= dropout < 1.0
+# - attention_heads must divide feature_extraction_dim evenly
+# - cv_folds > 1 when using cross-validation
+# - All specified directories will be created if they don't exist
+#
+# ARCHITECTURE SELECTION GUIDELINES:
+# - basic: Good starting point, fast training, suitable for simple datasets
+# - improved: Better performance on complex datasets, requires more computation
+# - lightweight: Best for resource-constrained environments or mobile deployment
+# - ensemble: Highest performance but most computationally expensive
+#
+# REGULARIZATION RECOMMENDATIONS:
+# - Use higher dropout for smaller datasets to prevent overfitting
+# - Enable batch/layer normalization for training stability
+# - Consider ensemble regularization for better generalization
+#
+# EVALUATION BEST PRACTICES:
+# - Always use cross-validation for robust performance estimates
+# - Include multiple metrics to get comprehensive performance view
+# - Enable statistical testing when comparing models
+# - Save checkpoints frequently for long training runs
+#
+# =============================================================================

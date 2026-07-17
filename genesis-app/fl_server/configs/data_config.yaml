@@ -1,0 +1,348 @@
+
+# =============================================================================
+# DATA CONFIGURATION FOR FEDERATED LEARNING
+# =============================================================================
+#
+# This configuration file defines all data-related parameters including file
+# paths, preprocessing options, feature engineering settings, and federated
+# data partitioning configurations.
+#
+# CONFIGURATION STRUCTURE:
+# - data: File paths and directory structure
+# - preprocessing: Data cleaning and preparation
+# - feature_engineering: Feature extraction and transformation
+# - federated: Federated data partitioning and distribution
+# - validation: Data validation and quality checks
+#
+# =============================================================================
+
+data:
+  # ==========================================================================
+  # DATA DIRECTORIES AND FILE PATHS
+  # ==========================================================================
+  
+  # Directory containing raw, unprocessed data files
+  # Should contain the original CSV files as downloaded or provided
+  raw_dir: "data/raw"
+  
+  # Directory for processed and cleaned data files
+  # Contains data after preprocessing and feature engineering
+  processed_dir: "data/processed"
+  
+  # Directory containing gene embedding files
+  # Pre-trained embeddings for genetic features
+  gene_embeddings_dir: "data/gene_embeddings"
+  
+  # Specific data files used in the federated learning pipeline
+  files:
+    # Main training dataset file (in raw_dir)
+    # Contains labeled examples for model training
+    train: "train.csv"
+    
+    # Test dataset file (in raw_dir)
+    # Used for final model evaluation and performance assessment
+    test: "test.csv"
+    
+    # Validation/orthogonal dataset file (in federated_data)
+    # Independent validation set for unbiased performance evaluation
+    validation: "validation.csv"
+    
+    # Pre-trained gene embeddings file
+    # Word2Vec or similar embeddings for genetic sequence features
+    # Format: TSV with gene identifiers and embedding vectors
+    gene_embeddings: "gene2vec_dim_200_iter_9_w2v.tsv"
+
+# =============================================================================
+# DATA PREPROCESSING CONFIGURATION
+# =============================================================================
+
+preprocessing:
+  # ==========================================================================
+  # DATA CLEANING AND NORMALIZATION
+  # ==========================================================================
+  
+  # Apply feature normalization/standardization
+  # true: Normalizes features to have zero mean and unit variance
+  # false: Uses raw feature values without normalization
+  # Recommended: true for neural networks, false for tree-based models
+  normalize: true
+  
+  # Strategy for handling missing values
+  # Options: "drop", "impute", "forward_fill", "backward_fill"
+  # - drop: Remove rows/columns with missing values
+  # - impute: Fill missing values using statistical methods
+  # - forward_fill: Use previous valid value
+  # - backward_fill: Use next valid value
+  handle_missing: "drop"
+  
+  # Imputation method when handle_missing is "impute"
+  # Options: "mean", "median", "mode", "constant"
+  # - mean: Use mean value for numerical features
+  # - median: Use median value for numerical features
+  # - mode: Use most frequent value for categorical features
+  # - constant: Use a specified constant value
+  imputation_method: "median"
+  
+  # Constant value to use when imputation_method is "constant"
+  imputation_constant: 0
+  
+  # Remove duplicate rows from the dataset
+  # true: Removes exact duplicate rows to prevent data leakage
+  # false: Keeps all rows including duplicates
+  remove_duplicates: true
+  
+  # ==========================================================================
+  # FEATURE SELECTION AND FILTERING
+  # ==========================================================================
+  
+  # Enable automatic feature selection
+  # true: Applies feature selection algorithms to reduce dimensionality
+  # false: Uses all available features
+  feature_selection: false
+  
+  # Feature selection method when feature_selection is true
+  # Options: "variance_threshold", "mutual_info", "f_classif", "chi2", "rfe"
+  # - variance_threshold: Remove low-variance features
+  # - mutual_info: Select features based on mutual information
+  # - f_classif: ANOVA F-test for classification
+  # - chi2: Chi-squared test for categorical features
+  # - rfe: Recursive feature elimination
+  feature_selection_method: "mutual_info"
+  
+  # Number of top features to select (when using feature selection)
+  # Higher values: More features, potentially better performance but higher complexity
+  # Lower values: Fewer features, faster training but potentially lower performance
+  n_features_to_select: 1000
+  
+  # Minimum variance threshold for variance-based feature selection
+  # Features with variance below this threshold are removed
+  # Higher values: More aggressive feature removal
+  # Lower values: More conservative feature removal
+  variance_threshold: 0.01
+  
+  # ==========================================================================
+  # DATA QUALITY AND VALIDATION
+  # ==========================================================================
+  
+  # Minimum number of samples required per class
+  # Classes with fewer samples will be flagged or handled specially
+  min_samples_per_class: 10
+  
+  # Maximum allowed missing value percentage per feature
+  # Features with more missing values than this threshold are removed
+  # Range: 0.0-1.0 (0.0 = no missing values allowed, 1.0 = all missing allowed)
+  max_missing_percentage: 0.1
+  
+  # Enable data quality checks and reporting
+  # true: Performs comprehensive data quality analysis
+  # false: Skips quality checks for faster processing
+  enable_quality_checks: true
+
+# =============================================================================
+# FEATURE ENGINEERING CONFIGURATION
+# =============================================================================
+
+feature_engineering:
+  # ==========================================================================
+  # SEQUENCE-BASED FEATURES
+  # ==========================================================================
+  
+  # Enable extraction of sequence-based features
+  # true: Extracts k-mer frequencies, GC content, sequence length, etc.
+  # false: Uses only provided features without sequence analysis
+  sequence_features: true
+  
+  # K-mer size for sequence feature extraction
+  # Higher values: More specific patterns but higher dimensionality
+  # Lower values: More general patterns but lower dimensionality
+  # Typical range: 3-6 for DNA sequences
+  kmer_size: 3
+  
+  # Maximum number of k-mers to include as features
+  # Limits feature space size for computational efficiency
+  # Higher values: More comprehensive but computationally expensive
+  max_kmers: 1000
+  
+  # ==========================================================================
+  # CONSERVATION AND FUNCTIONAL FEATURES
+  # ==========================================================================
+  
+  # Include evolutionary conservation scores
+  # true: Adds features based on sequence conservation across species
+  # false: Excludes conservation-based features
+  conservation_features: true
+  
+  # Include functional annotation features
+  # true: Adds features from functional databases (GO, KEGG, etc.)
+  # false: Excludes functional annotation features
+  functional_features: true
+  
+  # Include population genetics features
+  # true: Adds allele frequencies, population-specific statistics
+  # false: Excludes population genetics features
+  population_features: true
+  
+  # ==========================================================================
+  # INTERACTION AND DERIVED FEATURES
+  # ==========================================================================
+  
+  # Create interaction features between existing features
+  # true: Generates polynomial and interaction terms
+  # false: Uses only original features
+  interaction_features: true
+  
+  # Degree of polynomial features to generate
+  # Higher values: More complex interactions but exponentially more features
+  # Typical range: 2-3 (2 = pairwise interactions, 3 = three-way interactions)
+  polynomial_degree: 2
+  
+  # Maximum number of interaction features to create
+  # Limits feature explosion from polynomial feature generation
+  max_interaction_features: 500
+  
+  # ==========================================================================
+  # EMBEDDING AND REPRESENTATION LEARNING
+  # ==========================================================================
+  
+  # Use pre-trained gene embeddings
+  # true: Incorporates gene2vec or similar embeddings
+  # false: Uses one-hot encoding or ignores gene information
+  use_gene_embeddings: true
+  
+  # Dimensionality of gene embeddings
+  # Should match the dimensionality of pre-trained embeddings
+  # Higher values: More expressive but computationally expensive
+  gene_embedding_dim: 200
+  
+  # Enable dimensionality reduction using PCA
+  # true: Applies PCA to reduce feature dimensionality
+  # false: Uses full feature space
+  use_pca: false
+  
+  # Number of principal components to retain
+  # Higher values: More information retained but higher dimensionality
+  # Lower values: More compression but potential information loss
+  pca_components: 100
+  
+  # Explained variance threshold for PCA
+  # Alternative to fixed number of components
+  # Selects components that explain this fraction of total variance
+  pca_variance_threshold: 0.95
+
+# =============================================================================
+# FEDERATED DATA PARTITIONING CONFIGURATION
+# =============================================================================
+
+federated:
+  # ==========================================================================
+  # OUTPUT AND STORAGE SETTINGS
+  # ==========================================================================
+  
+  # Directory to store federated data partitions
+  # Each client's data will be stored in a subdirectory
+  # Should have sufficient storage space for all client partitions
+  output_dir: "federated_data"
+  
+  # Save partition metadata and statistics
+  # true: Saves detailed information about each partition
+  # false: Only saves the partitioned data files
+  save_metadata: true
+  
+  # Save data distribution statistics
+  # true: Generates and saves class distribution plots and statistics
+  # false: Skips statistical analysis for faster processing
+  save_statistics: true
+  
+  # ==========================================================================
+  # DATA PARTITIONING STRATEGIES
+  # ==========================================================================
+  
+  # List of partitioning configurations to generate
+  # Multiple partitions can be created for different experimental scenarios
+  partitions:
+    # IID (Independent and Identically Distributed) partition
+    # Data is randomly distributed among clients with similar class distributions
+    - type: "iid"
+      # Number of clients to create for this partition
+      n_clients: 5
+      # Random seed for reproducible partitioning
+      random_seed: 42
+      # Minimum number of samples per client
+      min_samples_per_client: 100
+      # Whether to balance classes within each client
+      balance_classes: true
+    
+    # Non-IID partition with Dirichlet distribution
+    # Creates heterogeneous data distributions across clients
+    - type: "non_iid"
+      # Number of clients to create for this partition
+      n_clients: 5
+      # Dirichlet concentration parameter (alpha)
+      # Lower values: More heterogeneous distributions
+      # Higher values: More homogeneous distributions
+      # Typical range: 0.1-10.0
+      alpha: 0.5
+      # Random seed for reproducible partitioning
+      random_seed: 42
+      # Minimum number of samples per client
+      min_samples_per_client: 50
+  
+  # ==========================================================================
+  # VALIDATION DATA HANDLING
+  # ==========================================================================
+  
+  # Strategy for handling validation data in federated setting
+  # Options: "centralized", "distributed", "hybrid"
+  # - centralized: Keep all validation data on server
+  # - distributed: Distribute validation data among clients
+  # - hybrid: Keep some validation data centralized, distribute the rest
+  validation_strategy: "centralized"
+  
+  # Fraction of validation data to keep centralized (for hybrid strategy)
+  # Range: 0.0-1.0 (0.0 = all distributed, 1.0 = all centralized)
+  centralized_validation_fraction: 0.5
+  
+  # ==========================================================================
+  # DATA PRIVACY AND SECURITY
+  # ==========================================================================
+  
+  # Enable differential privacy for data partitioning
+  # true: Adds noise to partition statistics for privacy protection
+  # false: Uses exact partition statistics
+  enable_differential_privacy: false
+  
+  # Privacy budget (epsilon) for differential privacy
+  # Lower values: Stronger privacy protection but more noise
+  # Higher values: Weaker privacy protection but less noise
+  # Typical range: 0.1-10.0
+  privacy_epsilon: 1.0
+  
+  # Enable secure aggregation simulation
+  # true: Simulates secure aggregation protocols during data preparation
+  # false: Standard data partitioning without security simulation
+  simulate_secure_aggregation: false
+
+# =============================================================================
+# CONFIGURATION VALIDATION NOTES
+# =============================================================================
+#
+# The following constraints are automatically validated:
+# - All specified directories and files must exist
+# - n_clients > 0 for all partitions
+# - 0.0 < alpha for non-IID partitions
+# - min_samples_per_client > 0
+# - Feature selection parameters within valid ranges
+# - PCA components <= total number of features
+#
+# PERFORMANCE CONSIDERATIONS:
+# - Higher n_features_to_select: Better performance but slower training
+# - Enable sequence_features: More informative but computationally expensive
+# - Use PCA: Faster training but potential information loss
+# - More clients: Better federated simulation but higher computational cost
+#
+# PRIVACY CONSIDERATIONS:
+# - Enable differential privacy for sensitive datasets
+# - Use non-IID partitions to simulate realistic federated scenarios
+# - Consider validation_strategy based on privacy requirements
+#
+# =============================================================================

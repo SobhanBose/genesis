@@ -1,0 +1,21 @@
+2026-07-13 10:25:49 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Initializing simplified federated server
+2026-07-13 10:25:49 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Using device: cpu
+2026-07-13 10:25:49 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Loaded validation data: 13383 samples
+2026-07-13 10:25:50 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Preprocessing components initialized
+2026-07-13 10:25:50 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Simplified federated server initialized successfully
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Creating FedAdam strategy with server-initialized parameters
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Server parameter initialization: All clients will receive identical starting parameters
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - FedAdam: Extracting initial parameters from server model (beta_1=0.9, beta_2=0.999, eta=0.01)
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Extracting parameters from model with 37 layers
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Parameter extraction statistics: 37 layers, 267687 total parameters
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Parameter data types: float32, int64
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Parameter shapes: (512, 173), (512,), (512,), (512,), (512,) ... (32 more)
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Successfully extracted and validated 37 parameter tensors (267687 total parameters) from server model
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - FedAdam strategy initialized with server parameter initialization and Adam parameters (beta_1=0.9, beta_2=0.999, eta=0.01, tau=1e-06)
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Successfully created FedAdam strategy with server parameter initialization
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Strategy instance created: SimpleFedAdamStrategy
+2026-07-13 10:25:52 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Instantiated FedAdam parameters - beta1: 0.9, beta2: 0.999, eta: 0.01, tau: 1e-06
+2026-07-13 10:25:53 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Centralized evaluation (Round 0): Loss=2.1166, Accuracy=0.5325
+2026-07-13 10:26:55 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Round 1: Sampled 1 clients out of 1 available clients (fraction_fit=1.00)
+2026-07-13 10:26:55 UTC - INFO - [RUN:run_20260713_102512_2ea6] - Round 1: Sampled clients: ['6c9c9c63112b4a31b9578caf9eea06cb']
