@@ -1,0 +1,18 @@
+{
+  "isAborted": true,
+  "trainingSamples": 13391,
+  "testingSamples": 3348,
+  "inputSize": 173,
+  "rounds": [
+    {
+      "round": 1,
+      "status": "in-progress",
+      "loss": null,
+      "accuracy": null,
+      "epoch": null,
+      "startTime": "2026-07-13T10:26:55.395Z",
+      "endTime": null,
+      "timeTakenSec": null
+    }
+  ]
+}

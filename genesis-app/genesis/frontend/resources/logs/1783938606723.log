@@ -1,0 +1,48 @@
+2026-07-13 15:56:50,766 - INFO - Using device: cpu
+
+2026-07-13 15:56:51,172 - INFO - Loaded client data - Train: 13391, Test: 3348
+
+2026-07-13 15:56:51,452 - INFO - Preprocessing components initialized
+
+Feature engineering pipeline (gene embedding configurable, one-hot encoding for sequences)...
+
+Feature engineering complete. Final shape: (1, 174)
+
+2026-07-13 15:56:51,572 - INFO - Initialized lightweight model: {'model_type': 'LightweightPathogenicityClassifier', 'total_parameters': 265698, 'trainable_parameters': 265698, 'input_size': 173, 'output_size': 2, 'model_size_mb': 1.0135574340820312}
+
+Feature engineering pipeline (gene embedding configurable, one-hot encoding for sequences)...
+
+Feature engineering complete. Final shape: (13391, 174)
+
+Feature engineering pipeline (gene embedding configurable, one-hot encoding for sequences)...
+
+Feature engineering complete. Final shape: (3348, 174)
+
+2026-07-13 15:56:55,106 - INFO - Federated Client 2 initialized successfully
+2026-07-13 15:56:55,106 - INFO - Starting federated client 2
+2026-07-13 15:56:55,106 - INFO - Connecting to server at localhost:8080
+
+2026-07-13 15:56:55,106 - INFO - Training data: 13391 samples
+2026-07-13 15:56:55,106 - INFO - Test data: 3348 samples
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+
+[92mINFO [0m:      
+[92mINFO [0m:      Received: train message 935e8605-7cda-47cd-907e-c599531204ab
+
+2026-07-13 15:56:55,425 - INFO - {} training (no proximal regularization)
+
+
+Process exited with code null
